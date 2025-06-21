@@ -71,6 +71,94 @@
       "description": "Plan your journey through the ancient wonders of Upper Egypt with our expert guides.",
       "button": "Venture Deeper into Southern Egypt"
     },
+    "content": {
+      "karnak": {
+        "title": "Karnak Temple Complex",
+        "description": "The largest temple complex in Egypt, built over 2,000 years. Walk through towering columns and discover ancient Egyptian religious practices."
+      },
+      "valleyOfKings": {
+        "title": "Valley of the Kings",
+        "description": "Explore the hidden tombs of pharaohs in this sacred valley. Marvel at the intricate wall paintings and hieroglyphs that have survived for millennia."
+      },
+      "abuSimbel": {
+        "title": "Abu Simbel Temples",
+        "description": "Ramses II's magnificent temples carved into rock cliffs. Witness the incredible engineering feat that saved these monuments from flooding."
+      },
+      "hatshepsut": {
+        "title": "Temple of Hatshepsut",
+        "description": "The mortuary temple of Egypt's most successful female pharaoh, built into the cliffs of Deir el-Bahari with stunning architectural design."
+      },
+      "felucca": {
+        "title": "Traditional Felucca Sailing",
+        "description": "Sail the Nile on traditional wooden boats as ancient Egyptians did. Enjoy peaceful moments watching life along the riverbanks."
+      },
+      "nileCruise": {
+        "title": "Luxury Nile Cruise",
+        "description": "Experience comfort and elegance while cruising between Luxor and Aswan. Watch ancient temples pass by from your floating hotel."
+      },
+      "nubianVillage": {
+        "title": "Nubian Village Experience",
+        "description": "Visit authentic Nubian communities and learn about their unique culture, colorful houses, and traditional crafts."
+      },
+      "luxorSouk": {
+        "title": "Luxor Traditional Market",
+        "description": "Browse through bustling markets filled with spices, textiles, and handcrafted souvenirs. Experience authentic Egyptian trading culture."
+      },
+      "luxorMuseum": {
+        "title": "Luxor Museum",
+        "description": "Discover a carefully curated collection of artifacts from Theban tombs and temples, showcasing the glory of ancient Luxor."
+      },
+      "nubianCrafts": {
+        "title": "Nubian Handicrafts",
+        "description": "Learn traditional Nubian crafting techniques and purchase authentic handmade items directly from local artisans."
+      },
+      "luxorResort": {
+        "title": "Luxor Luxury Resort",
+        "description": "Stay in elegant accommodations with views of the Nile or ancient temples. Enjoy world-class amenities in a historic setting."
+      },
+      "aswanHotel": {
+        "title": "Historic Aswan Hotel",
+        "description": "Experience the grandeur of colonial-era hospitality in beautifully preserved hotels overlooking the Nile cataracts."
+      },
+      "nubianLodge": {
+        "title": "Authentic Nubian Lodge",
+        "description": "Stay in traditional Nubian-style accommodations and immerse yourself in local culture and hospitality."
+      },
+      "halayeb": {
+        "title": "Halayeb Triangle",
+        "description": "Explore Egypt's southern frontier with unique wildlife, pristine beaches, and unspoiled natural landscapes."
+      },
+      "shalateen": {
+        "title": "Shalateen Region",
+        "description": "Discover traditional Bedouin culture and stunning Red Sea coastline in this remote southern area."
+      }
+    },
+    "data": {
+      "templeComplex": "Temple Complex",
+      "necropolis": "Ancient Necropolis",
+      "mortuaryTemple": "Mortuary Temple",
+      "culturalExperience": "Cultural Experience",
+      "luxuryExperience": "Luxury Experience",
+      "shopping": "Shopping",
+      "museum": "Museum",
+      "resort": "Luxury Resort",
+      "historicHotel": "Historic Hotel",
+      "culturalLodge": "Cultural Lodge",
+      "naturalArea": "Natural Area",
+      "culturalArea": "Cultural Area",
+      "octoberToApril": "October to April",
+      "yearRound": "Year Round",
+      "priceHigh": "$$$",
+      "priceMedium": "$$",
+      "highlights": {
+        "wildlife": "Wildlife Watching",
+        "beaches": "Pristine Beaches",
+        "ecoTourism": "Eco-Tourism",
+        "bedouinCulture": "Bedouin Culture",
+        "marineLife": "Marine Life",
+        "desertSafaris": "Desert Safaris"
+      }
+    },
     "attractions": {
       "title": "Must-See Attractions",
       "luxor": {
