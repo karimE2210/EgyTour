@@ -1,0 +1,528 @@
+{
+  "auth": {
+    "login": "Sign in to your account",
+    "signingIn": "Signing in...",
+    "email": "Email address",
+    "password": "Password",
+    "noAccount": "Don't have an account?",
+    "signup": "Sign up here"
+  },
+  "home": {
+    "planTrip": {
+      "title": "Plan Your Trip",
+      "subtitle": "Let us help you create the perfect itinerary for your Egyptian adventure",
+      "startDate": "Start Date",
+      "endDate": "End Date",
+      "travelers": "Number of Travelers",
+      "selectTravelers": "Select number of travelers",
+      "traveler": "Traveler",
+      "interests": "Interests",
+      "selectInterests": "Select your interests",
+      "culture": "Culture & History",
+      "adventure": "Adventure",
+      "relaxation": "Relaxation",
+      "food": "Food & Cuisine",
+      "email": "Email",
+      "emailPlaceholder": "Enter your email address",
+      "submit": "Get Your Itinerary"
+    },
+    "popularDestinations": {
+      "title": "Popular Destinations",
+      "subtitle": "Discover Egypt's most captivating destinations, from ancient wonders to modern marvels",
+      "seeMore": "See More"
+    },
+    "featured": {
+      "title": "Featured Experiences",
+      "subtitle": "Discover unique experiences that showcase the best of Egypt",
+      "artCulture": {
+        "title": "Art & Culture",
+        "description": "Immerse yourself in Egypt's rich artistic heritage and cultural traditions"
+      },
+      "familyAdventures": {
+        "title": "Family Adventures",
+        "description": "Create unforgettable memories with activities perfect for the whole family"
+      },
+      "localExperiences": {
+        "title": "Local Experiences",
+        "description": "Connect with local communities and experience authentic Egyptian life"
+      }
+    }
+  },
+  "higherEgypt": {
+    "hero": {
+      "title": "Timeless Treasures of the South",
+      "subtitle": "From Luxor's magnificent temples to Aswan's Nubian culture, discover the ancient wonders and living traditions of Upper Egypt."
+    },
+    "tabs": {
+      "temples": "Temples & Tombs",
+      "nile": "Nile Experiences",
+      "cultural": "Cultural Adventures",
+      "stay": "Where to Stay",
+      "frontiers": "Southern Frontiers"
+    },
+    "labels": {
+      "type": "Type",
+      "bestTime": "Best Time",
+      "priceRange": "Price Range",
+      "highlights": "Highlights"
+    },
+    "cta": {
+      "title": "Ready to Explore Higher Egypt?",
+      "description": "Plan your journey through the ancient wonders of Upper Egypt with our expert guides.",
+      "button": "Venture Deeper into Southern Egypt"
+    },
+    "attractions": {
+      "title": "Must-See Attractions",
+      "luxor": {
+        "title": "Luxor",
+        "description": "The world's greatest open-air museum, home to ancient temples and royal tombs."
+      },
+      "aswan": {
+        "title": "Aswan",
+        "description": "Nubian culture meets ancient history in this picturesque Nile city."
+      },
+      "komOmbo": {
+        "title": "Kom Ombo",
+        "description": "Unique double temple dedicated to two gods, offering stunning Nile views."
+      }
+    },
+    "activities": {
+      "title": "Popular Activities",
+      "cruise": {
+        "title": "Nile Cruise",
+        "description": "Experience the magic of the Nile with luxury cruises between Luxor and Aswan.",
+        "cta": "Book a Nile Cruise"
+      },
+      "temples": {
+        "title": "Temple Tours",
+        "description": "Explore ancient temples and learn about Egypt's fascinating history.",
+        "cta": "Book Temple Tours"
+      }
+    }
+  },
+  "ancientEgypt": {
+    "hero": {
+      "title": "Ancient Egypt: Life, Belief & Legacy",
+      "subtitle": "Step back into the heart of one of history's most remarkable civilizations."
+    },
+    "dailyLife": {
+      "title": "A Day in Ancient Egypt",
+      "subtitle": "Experience the rhythm of daily life in one of history's most sophisticated civilizations",
+      "agriculture": {
+        "title": "Agriculture & the Nile",
+        "description": "The annual flooding of the Nile created fertile black soil called 'Kemet' - the Black Land. Farmers used sophisticated irrigation systems and grew wheat, barley, flax, and papyrus.",
+        "fact": "The Nile's flood cycle was so predictable that Egyptians based their calendar on it."
+      },
+      "food": {
+        "title": "Food & Drink",
+        "description": "Egyptians enjoyed a varied diet including bread, beer, fish, vegetables, and fruits. Beer was consumed daily by all classes and was safer than water.",
+        "fact": "Workers building the pyramids were paid in bread and beer."
+      },
+      "fashion": {
+        "title": "Fashion & Makeup",
+        "description": "Both men and women wore makeup, especially kohl around the eyes for protection and beauty. Linen was the primary fabric, with elaborate wigs and jewelry.",
+        "fact": "Egyptians invented the first eyeliner and used it for both beauty and sun protection."
+      },
+      "society": {
+        "title": "Roles in Society",
+        "description": "Society was hierarchical with the pharaoh at the top, followed by nobles, priests, scribes, craftsmen, and farmers. Women had more rights than in many ancient societies.",
+        "fact": "Women could own property, run businesses, and even become pharaohs like Hatshepsut."
+      }
+    },
+    "gods": {
+      "title": "Gods, Myths & the Afterlife",
+      "oracle": {
+        "title": "Ancient Oracle",
+        "subtitle": "Receive a blessing from the gods"
+      },
+      "deities": {
+        "ra": {
+          "name": "Ra",
+          "role": "Sun God",
+          "description": "The supreme solar deity who sailed across the sky each day in his solar barque."
+        },
+        "isis": {
+          "name": "Isis",
+          "role": "Mother Goddess",
+          "description": "Goddess of magic, motherhood, and fertility. She resurrected Osiris and protected Horus."
+        },
+        "osiris": {
+          "name": "Osiris",
+          "role": "God of the Afterlife",
+          "description": "The first pharaoh who was murdered by Seth but resurrected by Isis to rule the underworld."
+        },
+        "anubis": {
+          "name": "Anubis",
+          "role": "God of Mummification",
+          "description": "The jackal-headed god who guided souls to the afterlife and oversaw the weighing of hearts."
+        }
+      },
+      "myths": {
+        "horusSeth": {
+          "title": "The Myth of Horus & Seth",
+          "description": "After Osiris was murdered by his brother Seth, Horus (Osiris's son) fought Seth for 80 years to avenge his father and claim the throne. This epic battle represents the struggle between order and chaos, good and evil."
+        },
+        "bookOfDead": {
+          "title": "The Book of the Dead",
+          "description": "Not actually a book, but a collection of spells and prayers to help the deceased navigate the afterlife. It included the famous \"Weighing of the Heart\" ceremony where Anubis judged if one was worthy of eternal life."
+        }
+      }
+    },
+    "innovations": {
+      "title": "Genius of the Ancients",
+      "subtitle": "Discover the incredible innovations that shaped the ancient world",
+      "medicine": {
+        "title": "Medicine",
+        "description": "Egyptian doctors were highly skilled, performing surgeries and using natural remedies.",
+        "fact": "They had specialized doctors for different body parts - the first medical specialists!"
+      },
+      "astronomy": {
+        "title": "Astronomy",
+        "description": "They mapped the stars and created the first solar calendar with 365 days.",
+        "fact": "The Great Pyramid is aligned with incredible precision to true north."
+      },
+      "mathematics": {
+        "title": "Mathematics",
+        "description": "Developed geometry for surveying land and building monuments.",
+        "fact": "They calculated pi (π) to a remarkable degree of accuracy."
+      },
+      "writing": {
+        "title": "Writing",
+        "description": "Created hieroglyphs, one of the world's first writing systems.",
+        "fact": "Hieroglyphs could be read left-to-right, right-to-left, or top-to-bottom!"
+      }
+    },
+    "monuments": {
+      "title": "Timeless Monuments",
+      "subtitle": "Marvel at the architectural wonders that have stood the test of time",
+      "pyramids": {
+        "name": "The Pyramids of Giza",
+        "origin": "Built as tombs for pharaohs, the Great Pyramid was constructed around 2560 BCE for Khufu.",
+        "fact": "For over 3,800 years, the Great Pyramid was the tallest man-made structure in the world.",
+        "image": "/images/mypics/pyramidsH.jpeg"
+      },
+      "valleyOfKings": {
+        "name": "Valley of the Kings",
+        "origin": "Hidden valley where New Kingdom pharaohs were buried to protect their tombs from robbers.",
+        "fact": "Tutankhamun's tomb was the only royal tomb found nearly intact in 1922.",
+        "period": "New Kingdom (1550-1070 BCE)",
+        "details": "The valley contains 63 known tombs, though only 26 are royal tombs. The tombs were cut deep into the limestone cliffs and decorated with elaborate paintings and hieroglyphs depicting the journey to the afterlife.",
+        "tombs": "63 total",
+        "royalTombs": "26",
+        "discovery": "1922"
+      },
+      "abuSimbel": {
+        "name": "Abu Simbel Temples",
+        "origin": "Carved into solid rock by Ramses II, featuring four colossal statues of himself.",
+        "fact": "The entire temple complex was moved 200 meters in the 1960s to save it from flooding!",
+        "period": "New Kingdom (1279-1213 BCE)",
+        "details": "The temples were carved directly into the sandstone cliffs. The main temple features four 20-meter-tall statues of Ramses II. Twice a year, on February 22 and October 22, sunlight penetrates the temple to illuminate the inner sanctuary.",
+        "height": "20 meters",
+        "relocation": "1960s",
+        "alignment": "Twice yearly"
+      },
+      "dendera": {
+        "name": "Dendera Temple Complex",
+        "origin": "Dedicated to Hathor, goddess of love and joy, with stunning astronomical ceiling.",
+        "fact": "The temple's ceiling contains the famous 'Dendera Zodiac' - an ancient star map.",
+        "period": "Ptolemaic Period (305-30 BCE)",
+        "details": "The temple complex covers 40,000 square meters and includes a birth house, sacred lake, and the main temple. The famous Dendera Zodiac ceiling shows the constellations as the ancient Egyptians saw them.",
+        "area": "40,000 m²",
+        "features": "Birth house, Sacred lake",
+        "zodiac": "Ancient star map"
+      }
+    },
+    "funFacts": {
+      "title": "Did You Know?",
+      "papyrus": {
+        "fact": "Papyrus was used for writing, boats, sandals, and even as food!"
+      },
+      "mummification": {
+        "fact": "Mummification took 70 days and involved removing organs except the heart."
+      },
+      "clocks": {
+        "fact": "Egyptians invented the first clocks using water and shadow measurements."
+      }
+    },
+    "ui": {
+      "hoverHint": "Hover for more details",
+      "detailedInfo": "Detailed Information"
+    }
+  },
+  "desertAdventures": {
+    "title": "Desert Adventures in Egypt",
+    "intro": "Discover Egypt's majestic deserts through thrilling safaris, serene nights under starry skies, and cultural Bedouin traditions. Whether you seek adrenaline or tranquility, the desert offers unforgettable moments.",
+    "safariImageAlt": "4x4 Safari across Egyptian desert",
+    "campingImageAlt": "Bedouin campsite at night",
+    "stargazingImageAlt": "Stargazing in Egypt's desert",
+    "safari": {
+      "title": "Desert Safari",
+      "description": "Experience the thrill of 4x4 adventures across golden dunes, explore fossil valleys, and encounter unique desert wildlife.",
+      "items": [
+        "Guided 4x4 off-road tours",
+        "Fossil Valley and Crystal Mountain excursions",
+        "Camel rides through ancient caravan routes"
+      ]
+    },
+    "camping": {
+      "title": "Desert Camping",
+      "description": "Unwind at Bedouin-style camps, enjoy open-air dining, and listen to local stories under the stars.",
+      "items": [
+        "Authentic Bedouin campsites",
+        "Local cuisine by the fire",
+        "Evening drumming and folk tales"
+      ]
+    },
+    "stargazing": {
+      "title": "Stargazing",
+      "description": "Marvel at the dark skies of the White Desert and Sinai, and discover the ancient Egyptian passion for astronomy.",
+      "items": [
+        "Telescopic tours with local astronomers",
+        "Best viewed from Siwa, Bahariya, and Farafra",
+        "Learn about ancient constellations and myths"
+      ]
+    },
+    "tips": {
+      "title": "Desert Travel Tips",
+      "items": [
+        "Bring sunscreen & scarf",
+        "Nights can be very cold",
+        "Respect Bedouin customs"
+      ]
+    }
+  },
+  "copticSites": {
+    "hero": {
+      "title": "Coptic Sites: A Journey Through Christian Egypt",
+      "subtitle": "Explore the rich history and cultural heritage of Christian Egypt",
+      "alt": "Coptic Cairo"
+    },
+    "introduction": {
+      "title": "Welcome to Christian Egypt",
+      "description": "Discover a spiritual heritage that dates back to the dawn of Christianity. Coptic Egypt offers a unique blend of ancient faith, stunning art, and profound history, preserved in its monasteries, churches, and traditions. It's a journey into the heart of one of the world's oldest Christian communities.",
+      "highlights": {
+        "tradition": {
+          "title": "Living Tradition",
+          "description": "Experience one of the oldest liturgies in the Christian world."
+        },
+        "architecture": {
+          "title": "Unique Architecture",
+          "description": "Witness a blend of Pharaonic, Greco-Roman, and Islamic styles."
+        },
+        "heritage": {
+          "title": "Rich Heritage",
+          "description": "Explore sites visited by the Holy Family during their flight into Egypt."
+        }
+      }
+    },
+    "sites": {
+      "title": "Iconic Coptic Sites",
+      "hangingChurch": {
+        "name": "The Hanging Church",
+        "description": "One of the oldest churches in Egypt, known for its stunning wooden roof.",
+        "image": "/images/mypics/hang.jpeg",
+        "period": "3rd Century",
+        "location": "Coptic Cairo",
+        "details": "Built atop the gatehouse of a Roman fortress, its nave is suspended over a passageway.",
+        "facts": "It holds over 100 icons, the oldest dating back to the 8th century.",
+        "visitInfo": "Open daily, free entry. Modest dress required."
+      },
+      "saintSergius": {
+        "name": "Saints Sergius and Bacchus Church",
+        "description": "Believed to be built on the spot where the Holy Family rested.",
+        "image": "/images/mypics/Saints Sergius and Bacchus Church - Wikipedia.jpeg",
+        "period": "4th Century",
+        "location": "Coptic Cairo",
+        "details": "The crypt contains the site where the Holy Family is said to have stayed.",
+        "facts": "It's a major pilgrimage site for Coptic Christians.",
+        "visitInfo": "Often crowded, especially during religious holidays."
+      },
+      "copticMuseum": {
+        "name": "Coptic Museum",
+        "description": "Houses the largest collection of Coptic Christian artifacts in the world.",
+        "image": "/images/mypics/cm.jpeg",
+        "period": "Established 1908",
+        "location": "Coptic Cairo",
+        "details": "The collection includes icons, textiles, and manuscripts from different eras.",
+        "facts": "Its architecture merges Coptic art with traditional Islamic design.",
+        "visitInfo": "Entry fee required. Allow at least 2-3 hours for a visit."
+      },
+      "saintSimon": {
+        "name": "Saint Simon the Tanner Monastery",
+        "description": "A huge church complex built into the Mokattam mountain.",
+        "image": "/images/mypics/sim.jpeg",
+        "period": "20th Century",
+        "location": "Mokattam, Cairo",
+        "details": "Also known as the 'Cave Church', it can host up to 20,000 worshippers.",
+        "facts": "It commemorates the miracle of moving the Mokattam mountain.",
+        "visitInfo": "Located within the 'Garbage City', a unique community experience."
+      },
+      "saintBarbara": {
+        "name": "The Church of Saint Barbara",
+        "description": "A beautiful church dedicated to a 4th-century martyr.",
+        "image": "/images/mypics/bar.jpeg",
+        "period": "5th Century",
+        "location": "Coptic Cairo",
+        "details": "Famous for its beautifully inlaid wooden doors and iconostasis.",
+        "facts": "It houses the relics of Saint Barbara.",
+        "visitInfo": "A quieter alternative to the more crowded nearby churches."
+      },
+      "abuSerga": {
+        "name": "Abu Serga",
+        "description": "One of Egypt's oldest churches, officially known as Saints Sergius and Bacchus Church.",
+        "image": "/images/mypics/cryp.jpeg",
+        "period": "4th Century",
+        "location": "Coptic Cairo",
+        "details": "Built on the site where the Holy Family is believed to have rested at the end of their journey into Egypt. The crypt is a significant pilgrimage spot.",
+        "facts": "It's considered a key stop on the Holy Family's trail in Egypt.",
+        "visitInfo": "The crypt can be accessed, but may have limited visiting hours."
+      }
+    },
+    "funFacts": {
+      "title": "Fun Facts about Coptic Egypt",
+      "calendar": {
+        "fact": "The Coptic calendar, with 13 months, is one of the oldest in the world and is still used by the church."
+      },
+      "hangingChurch": {
+        "fact": "The Hanging Church is so-named because it's built on top of the towers of a Roman fortress."
+      },
+      "liturgy": {
+        "fact": "The Coptic liturgy is one of the most ancient Christian services still in use today."
+      },
+      "christmas": {
+        "fact": "Coptic Christians celebrate Christmas on January 7th."
+      }
+    },
+    "timeline": {
+      "title": "Timeline of Coptic Christianity",
+      "saintMark": {
+        "title": "St. Mark arrives in Alexandria",
+        "description": "St. Mark the Evangelist introduces Christianity to Egypt.",
+        "impact": [
+          "Foundation of the Coptic Orthodox Church.",
+          "Alexandria becomes a major center of Christian thought."
+        ]
+      },
+      "spread": {
+        "title": "Spread of Christianity",
+        "description": "Christianity spreads rapidly across Egypt, leading to monasticism.",
+        "impact": [
+          "Establishment of the first churches.",
+          "The Desert Fathers pioneer monastic traditions."
+        ]
+      },
+      "chalcedon": {
+        "title": "Council of Chalcedon",
+        "description": "A major theological dispute leads to a schism.",
+        "impact": [
+          "The Coptic Church separates from other Christian bodies.",
+          "Development of a distinct Coptic identity."
+        ]
+      },
+      "arabConquest": {
+        "title": "Arab Conquest of Egypt",
+        "description": "Egypt comes under Islamic rule, shaping the Coptic experience.",
+        "impact": [
+          "Copts become a minority in their homeland.",
+          "Preservation of Coptic language and culture."
+        ]
+      },
+      "revival": {
+        "title": "Modern Era Revival",
+        "description": "A period of cultural and spiritual revival for the Coptic community.",
+        "impact": [
+          "Renewed interest in Coptic art and music.",
+          "Restoration of ancient churches and monasteries."
+        ]
+      }
+    },
+    "travelTips": {
+      "title": "Traveler's Guide to Coptic Sites",
+      "dress": {
+        "title": "Dress Modestly",
+        "description": "Cover shoulders and knees when visiting churches and monasteries."
+      },
+      "shoes": {
+        "title": "Comfortable Shoes",
+        "description": "Many sites involve walking on uneven stone floors."
+      },
+      "respect": {
+        "title": "Respectful Silence",
+        "description": "These are active places of worship. Be quiet and observe services from a distance."
+      },
+      "timing": {
+        "title": "Check Timings",
+        "description": "Opening hours can vary, especially during holidays like Coptic Christmas or Easter."
+      },
+      "photography": {
+        "title": "Photography Rules",
+        "description": "Ask for permission before taking photos, and avoid using flash."
+      }
+    }
+  },
+  "sportsActivities": {
+    "hero": {
+      "title": "Active Adventures: Sports You Can Do in Egypt",
+      "subtitle": "From windsurfing the Red Sea to hiking ancient trails in Sinai, Egypt is an outdoor lover's dream. With diverse landscapes and year-round sunshine, it offers unforgettable sports experiences for travelers of all types."
+    },
+    "kitesurfing": {
+      "title": "Kitesurfing",
+      "subtitle": "Red Sea",
+      "description": "Egypt is globally ranked for its ideal kitesurfing conditions. Locations like El Gouna and Ras Sudr offer shallow, calm lagoons and steady wind—perfect for both beginners and pros.",
+      "highlights": {
+        "wind": "Constant wind and flat water",
+        "training": "Professional training centers",
+        "locations": "El Gouna, Soma Bay, Ras Sudr"
+      }
+    },
+    "diving": {
+      "title": "Red Sea Diving",
+      "subtitle": "Underwater Adventures",
+      "description": "Dive into world-renowned coral reefs and historic shipwrecks like the Thistlegorm. Egypt's Red Sea offers one of the most biodiverse marine environments on the planet.",
+      "highlights": {
+        "coral": "Coral gardens and reef walls",
+        "wrecks": "World-class wreck diving",
+        "hubs": "Diving hubs: Hurghada, Marsa Alam, Dahab"
+      }
+    },
+    "hiking": {
+      "title": "Sinai Hiking",
+      "subtitle": "Mountain Trails",
+      "description": "Trek the rugged terrain of Sinai. Climb Mount Sinai at dawn or explore off-the-beaten-path trails near St. Catherine. The desert mountains echo with ancient stories.",
+      "highlights": {
+        "sunrise": "Sunrise hikes to Mount Sinai",
+        "trails": "Remote desert trails",
+        "guides": "Guided eco-treks available"
+      }
+    },
+    "wadiDegla": {
+      "title": "Wadi Degla Canyon",
+      "subtitle": "Urban Wilderness",
+      "description": "An urban wilderness in Cairo, Wadi Degla offers a quiet escape for mountain bikers, runners, and nature walkers. It's a favorite weekend spot for locals.",
+      "highlights": {
+        "cycling": "Cycling and trail running",
+        "wildlife": "Wildlife spotting in a dry canyon",
+        "accessibility": "Easily accessible from Cairo"
+      }
+    },
+    "desertSports": {
+      "title": "Desert Sports",
+      "subtitle": "Sahara Adventures",
+      "description": "Egypt's deserts are playgrounds for the adventurous. Enjoy 4x4 dune bashing, sandboarding down golden slopes, or camping beneath a star-drenched sky.",
+      "highlights": {
+        "safaris": "Guided safaris and sandboarding",
+        "camping": "Night camping with Bedouin hosts",
+        "locations": "Locations: Bahariya, White Desert, Siwa"
+      }
+    },
+    "travelTips": {
+      "title": "Travel Tips",
+      "hydration": "Hydrate and use sun protection",
+      "guides": "Book certified guides for hiking/diving",
+      "timing": "Try sports early morning or late afternoon"
+    },
+    "ui": {
+      "highlights": "Highlights"
+    }
+  }
+} 

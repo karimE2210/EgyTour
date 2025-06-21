@@ -1,0 +1,1 @@
+image: "/images/egypt-logo.svg" 

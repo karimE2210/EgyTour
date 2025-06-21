@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\app",
+    "\\src\\app\\what-to-see",
+    "\\src\\app\\where-to-go",
+    "\\src\\components",
+    "\\src\\components\\home",
+    "\\src\\components\\shared",
+    "\\src\\components\\ui",
+    "\\src\\lib"
+  ],
+  "SelectedNode": "\\src\\components\\home",
+  "PreviewInSolutionExplorer": false
+}
