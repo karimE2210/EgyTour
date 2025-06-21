@@ -1344,5 +1344,26 @@ export const ar = {
   "higherEgypt.activities.cruise.cta": "احجز رحلة نيلية",
   "higherEgypt.activities.temples.title": "جولات المعابد",
   "higherEgypt.activities.temples.description": "استكشف المعابد القديمة وتعلم عن تاريخ مصر المذهل.",
-  "higherEgypt.activities.temples.cta": "احجز جولات المعابد"
+  "higherEgypt.activities.temples.cta": "احجز جولات المعابد",
+
+  // Shopping page translations
+  "shopping.title": "التسوق في مصر",
+  "shopping.subtitle": "اكتشف أفضل وجهات التسوق في مصر، من المولات الفاخرة إلى الأسواق التقليدية",
+  "shopping.description": "إليك بعض أشهر مراكز التسوق التي يمكنك زيارتها أثناء إقامتك.",
+  "shopping.clickToView": "انقر للعرض على خرائط جوجل",
+  "shopping.malls.cityStars.name": "سيتي ستارز",
+  "shopping.malls.cityStars.location": "مدينة نصر، القاهرة",
+  "shopping.malls.cityStars.description": "واحد من أكبر مراكز التسوق في مصر، يضم أكثر من 650 متجر ومطعم ومكان ترفيهي.",
+  "shopping.malls.mallOfEgypt.name": "مول مصر",
+  "shopping.malls.mallOfEgypt.location": "مدينة السادس من أكتوبر، الجيزة",
+  "shopping.malls.mallOfEgypt.description": "وجهة تسوق حديثة تضم أكثر من 400 متجر ومنحدر تزلج داخلي وخيارات ترفيهية متنوعة.",
+  "shopping.malls.cairoFestivalCity.name": "القاهرة فيستيفال سيتي",
+  "shopping.malls.cairoFestivalCity.location": "القاهرة الجديدة",
+  "shopping.malls.cairoFestivalCity.description": "تجربة تسوق مميزة مع الماركات الفاخرة والمطاعم وكورنيش مائي جميل.",
+  "shopping.malls.cityCenter.name": "سيتي سنتر الماظة",
+  "shopping.malls.cityCenter.location": "شيراتون، القاهرة",
+  "shopping.malls.cityCenter.description": "وجهة تسوق شائعة في المعادي تضم ماركات عالمية ومجموعة متنوعة من خيارات الطعام.",
+  "shopping.malls.arkanPlaza.name": "أركان بلازا",
+  "shopping.malls.arkanPlaza.location": "مدينة الشيخ زايد",
+  "shopping.malls.arkanPlaza.description": "مجمع تسوق حديث يضم مزيجاً من المحلات التجارية والمطاعم والمرافق الترفيهية."
 };
