@@ -81,7 +81,7 @@ export default function ThingsToDo() {
       id: "shopping",
       title: t('thingsToDo.categories.shopping'),
       image: "/images/mypics/shopping.jpg",
-      href: "/shopping",
+      href: "/things-to-do/shopping",
     },
     {
       id: "traditional",
