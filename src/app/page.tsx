@@ -14,43 +14,23 @@ import { CTASection } from "@/components/home/cta-section";
 import { FAQSection } from "@/components/shared/faq-section";
 
 /* 📋 FAQ DATA - Sample FAQ items for the homepage */
-const homeFAQs = [
+const homeFAQs = (t: any) => [
   {
-    question: "What are the best fun things to do in Egypt?",
+    question: t("home.faq.funThings.question"),
     answer: (
-      <div>
-        <p></p>
-        <ul className="list-disc pl-5 mt-2 space-y-1">
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-        </ul>
-      </div>
+      <p>{t("home.faq.funThings.answer")}</p>
     ),
   },
   {
-    question: "What are the top attractions in Egypt?",
+    question: t("home.faq.topAttractions.question"),
     answer: (
-      <div>
-        <p></p>
-        <ul className="list-disc pl-5 mt-2 space-y-1">
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-        </ul>
-      </div>
+      <p>{t("home.faq.topAttractions.answer")}</p>
     ),
   },
   {
-    question: "Is Egypt safe for tourists?",
+    question: t("home.faq.safety.question"),
     answer: (
-      <p></p>
+      <p>{t("home.faq.safety.answer")}</p>
     ),
   },
 ];
@@ -84,7 +64,7 @@ export default function Home() {
 
       {/* ❓ FAQ SECTION - Frequently asked questions */}
       <FAQSection 
-        faqs={homeFAQs} 
+        faqs={homeFAQs(t)} 
         title={t("home.faq.title")} 
       />
       {/* 

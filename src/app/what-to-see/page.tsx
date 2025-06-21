@@ -62,38 +62,23 @@ const featuredAttractions = [
   },
 ];
 
-const whatToSeeFAQs = [
+const whatToSeeFAQs = (t: any) => [
   {
-    question: "What are the top 5 tourist attractions in Egypt?",
+    question: t("whatToSee.faq.topAttractions.question"),
     answer: (
-      <div>
-        <p>Egypt offers a wealth of incredible attractions, but the top 5 most popular include:</p>
-        <ol className="list-decimal pl-5 mt-2 space-y-2">
-          <li></li>
-         
-          <li></li>
-        </ol>
-      </div>
+      <p>{t("whatToSee.faq.topAttractions.answer")}</p>
     ),
   },
   {
-    question: "Is the Grand Mosque in Egypt worth visiting?",
+    question: t("whatToSee.faq.grandMosque.question"),
     answer: (
-      <p>
-        
-      </p>
+      <p>{t("whatToSee.faq.grandMosque.answer")}</p>
     ),
   },
   {
-    question: "How much does it cost to visit attractions in Egypt?",
+    question: t("whatToSee.faq.attractionCosts.question"),
     answer: (
-      <div>
-        <p>Attraction costs in Egypt vary widely:</p>
-        <ul className="list-disc pl-5 mt-2 space-y-1">
-          <li></li>
-        </ul>
-        <p className="mt-2"></p>
-      </div>
+      <p>{t("whatToSee.faq.attractionCosts.answer")}</p>
     ),
   },
 ];
@@ -264,8 +249,8 @@ export default function WhatToSee() {
         </div>
       </section>
 
-      {/* FAQs */}
-      <FAQSection faqs={whatToSeeFAQs} title="Frequently Asked Questions" />
+              {/* FAQs */}
+        <FAQSection faqs={whatToSeeFAQs(t)} title={t("whatToSee.faq.title")} />
     </div>
   );
 }

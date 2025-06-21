@@ -74,6 +74,12 @@ export const en = {
   "home.newsletter.title": "Stay Updated",
   "home.newsletter.subtitle": "Subscribe to our newsletter for the latest updates",
   "home.faq.title": "Frequently Asked Questions",
+  "home.faq.funThings.question": "What are the best fun things to do in Egypt?",
+  "home.faq.funThings.answer": "Egypt offers incredible experiences for every type of traveler! From exploring ancient pyramids and temples to diving in the Red Sea, taking Nile cruises, experiencing desert adventures, enjoying vibrant markets, and discovering rich cultural heritage.",
+  "home.faq.topAttractions.question": "What are the top attractions in Egypt?",
+  "home.faq.topAttractions.answer": "Must-see attractions include the Pyramids of Giza, Valley of the Kings, Karnak Temple, Abu Simbel, Egyptian Museum, Philae Temple, and the historic city of Alexandria.",
+  "home.faq.safety.question": "Is Egypt safe for tourists?",
+  "home.faq.safety.answer": "Yes, Egypt is generally safe for tourists. The government has implemented strong security measures at tourist sites, and millions of visitors enjoy Egypt safely each year. It's always recommended to follow standard travel precautions and stay informed about current conditions.",
   "home.popularDestinations.title": "Popular Destinations",
   "home.popularDestinations.subtitle": "Discover Egypt's most captivating destinations, from ancient wonders to modern marvels",
   "home.popularDestinations.seeMore": "See More",
@@ -222,6 +228,15 @@ export const en = {
   "whatToSee.categories.museums": "Museums",
   "whatToSee.categories.natural": "Natural Wonders",
   "whatToSee.categories.modern": "Modern Attractions",
+  
+  // What to See FAQs
+  "whatToSee.faq.title": "Frequently Asked Questions",
+  "whatToSee.faq.topAttractions.question": "What are the top 5 tourist attractions in Egypt?",
+  "whatToSee.faq.topAttractions.answer": "Egypt offers a wealth of incredible attractions, but the top 5 most popular include: The Pyramids of Giza and Sphinx, Valley of the Kings in Luxor, Karnak Temple Complex, Abu Simbel Temples, and the Egyptian Museum in Cairo.",
+  "whatToSee.faq.grandMosque.question": "Is the Grand Mosque in Egypt worth visiting?",
+  "whatToSee.faq.grandMosque.answer": "Yes, definitely! Egypt's grand mosques, such as the Al-Azhar Mosque and the Mosque of Ibn Tulun in Cairo, are architectural marvels with rich history. They offer insight into Islamic culture and feature stunning Islamic art and architecture.",
+  "whatToSee.faq.attractionCosts.question": "How much does it cost to visit attractions in Egypt?",
+  "whatToSee.faq.attractionCosts.answer": "Attraction costs in Egypt vary widely: Entry to the Pyramids of Giza costs around 200-400 EGP ($6-13 USD), most temples and museums range from 100-300 EGP ($3-10 USD), and many mosques are free to visit. Many sites offer student discounts with valid ID.",
   
   // Plan Your Trip
   "planTrip.title": "Plan Your Trip",
