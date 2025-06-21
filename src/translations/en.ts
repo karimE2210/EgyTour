@@ -582,6 +582,220 @@ export const en = {
   "islamicArt.quote.subtitle": "(Calligraphy and geometry serve not the eye, but the soul.)",
   "islamicArt.footer.legacy": "Islamic Art Legacy",
 
+  // Sinai translations
+  "sinai.title": "Explore the Sacred and Wild Sinai Peninsula",
+  "sinai.subtitle": "From the sacred peaks of Mount Sinai to the vibrant coral reefs of the Red Sea, discover a land where the spiritual meets adventure in perfect harmony.",
+
+  // Sinai Adventures
+  "sinai.adventures.mountSinai.title": "Mount Sinai",
+  "sinai.adventures.mountSinai.description": "The sacred mountain where Moses received the Ten Commandments, offering breathtaking sunrise views",
+  "sinai.adventures.mountSinai.difficulty": "Moderate",
+  "sinai.adventures.mountSinai.duration": "3-4 hours",
+  "sinai.adventures.mountSinai.bestTime": "October to April",
+
+  "sinai.adventures.saintCatherineMountain.title": "Saint Catherine Mountain",
+  "sinai.adventures.saintCatherineMountain.description": "Sacred peak where Saint Catherine's Monastery stands, offering stunning views and spiritual significance",
+  "sinai.adventures.saintCatherineMountain.difficulty": "Moderate to Hard",
+  "sinai.adventures.saintCatherineMountain.duration": "4-5 hours",
+  "sinai.adventures.saintCatherineMountain.bestTime": "October to April",
+
+  "sinai.adventures.coloredCanyon.title": "Colored Canyon",
+  "sinai.adventures.coloredCanyon.description": "Natural wonder with stunning rock formations in different colored layers",
+  "sinai.adventures.coloredCanyon.difficulty": "Easy to Moderate",
+  "sinai.adventures.coloredCanyon.duration": "2-3 hours",
+  "sinai.adventures.coloredCanyon.bestTime": "Year Round",
+
+  "sinai.adventures.mosesMountain.title": "Moses Mountain",
+  "sinai.adventures.mosesMountain.description": "Alternative trail to Mount Sinai with stunning views and historical significance",
+  "sinai.adventures.mosesMountain.difficulty": "Moderate",
+  "sinai.adventures.mosesMountain.duration": "3-4 hours",
+  "sinai.adventures.mosesMountain.bestTime": "October to April",
+
+  // Sinai Diving Spots
+  "sinai.divingSpots.dahab.title": "Dahab",
+  "sinai.divingSpots.dahab.description": "World-renowned diving destination known for its crystal-clear waters",
+  "sinai.divingSpots.dahab.depth": "5-30 meters",
+  "sinai.divingSpots.dahab.visibility": "20-30 meters",
+  "sinai.divingSpots.dahab.bestTime": "Year Round",
+
+  "sinai.divingSpots.rasAbuGalum.title": "Ras Abu Galum",
+  "sinai.divingSpots.rasAbuGalum.description": "Protected area with pristine coral reefs and diverse marine life",
+  "sinai.divingSpots.rasAbuGalum.depth": "5-40 meters",
+  "sinai.divingSpots.rasAbuGalum.visibility": "15-25 meters",
+  "sinai.divingSpots.rasAbuGalum.bestTime": "March to November",
+
+  "sinai.divingSpots.blueHole.title": "Blue Hole",
+  "sinai.divingSpots.blueHole.description": "Famous diving site with dramatic drop-offs and rich marine life",
+  "sinai.divingSpots.blueHole.depth": "7-120 meters",
+  "sinai.divingSpots.blueHole.visibility": "20-30 meters",
+  "sinai.divingSpots.blueHole.bestTime": "Year Round",
+
+  // Sinai Spiritual Retreats
+  "sinai.spiritualRetreats.stCatherine.title": "Saint Catherine's Monastery",
+  "sinai.spiritualRetreats.stCatherine.description": "Ancient monastery at the foot of Mount Sinai with rich history",
+  "sinai.spiritualRetreats.stCatherine.type": "Religious Site",
+  "sinai.spiritualRetreats.stCatherine.bestTime": "Year Round",
+
+  "sinai.spiritualRetreats.bedouinCamp.title": "Bedouin Camp Experience",
+  "sinai.spiritualRetreats.bedouinCamp.description": "Traditional Bedouin hospitality under the desert stars",
+  "sinai.spiritualRetreats.bedouinCamp.type": "Cultural Experience",
+  "sinai.spiritualRetreats.bedouinCamp.bestTime": "October to April",
+
+  "sinai.spiritualRetreats.stargazing.title": "Desert Stargazing",
+  "sinai.spiritualRetreats.stargazing.description": "Clear night skies perfect for astronomy and meditation",
+  "sinai.spiritualRetreats.stargazing.type": "Natural Experience",
+  "sinai.spiritualRetreats.stargazing.bestTime": "Year Round",
+
+  // Sinai Accommodations
+  "sinai.accommodations.dahabResort.title": "Dahab Resort",
+  "sinai.accommodations.dahabResort.description": "Luxury beachfront resort with diving facilities",
+  "sinai.accommodations.dahabResort.type": "Resort",
+  "sinai.accommodations.dahabResort.price": "$$$$",
+
+  "sinai.accommodations.ecoLodge.title": "Eco Lodge",
+  "sinai.accommodations.ecoLodge.description": "Sustainable accommodation in harmony with nature",
+  "sinai.accommodations.ecoLodge.type": "Eco-Friendly",
+  "sinai.accommodations.ecoLodge.price": "$$$",
+
+  "sinai.accommodations.zamanCastle.title": "Zaman Castle",
+  "sinai.accommodations.zamanCastle.description": "Historic castle accommodation with stunning mountain views and authentic Bedouin hospitality",
+  "sinai.accommodations.zamanCastle.type": "Historic Castle",
+  "sinai.accommodations.zamanCastle.price": "$$$",
+
+  "sinai.accommodations.tabaResort.title": "Taba Resort",
+  "sinai.accommodations.tabaResort.description": "Luxury beachfront resort with stunning Red Sea views and world-class facilities",
+  "sinai.accommodations.tabaResort.type": "Luxury Resort",
+  "sinai.accommodations.tabaResort.price": "$$$$",
+
+  "sinai.accommodations.bedouinLodge.title": "Bedouin Lodge",
+  "sinai.accommodations.bedouinLodge.description": "Authentic Bedouin accommodation experience",
+  "sinai.accommodations.bedouinLodge.type": "Traditional",
+  "sinai.accommodations.bedouinLodge.price": "$$",
+
+  // Sinai Labels
+  "sinai.labels.difficulty": "Difficulty:",
+  "sinai.labels.duration": "Duration:",
+  "sinai.labels.bestTime": "Best Time:",
+  "sinai.labels.depth": "Depth:",
+  "sinai.labels.visibility": "Visibility:",
+  "sinai.labels.type": "Type:",
+  "sinai.labels.priceRange": "Price Range:",
+
+  // Sinai Tab Labels
+  "sinai.tabs.adventure": "Adventure & Hiking",
+  "sinai.tabs.diving": "Diving & Beaches",
+  "sinai.tabs.spiritual": "Spiritual Retreats",
+  "sinai.tabs.stay": "Where to Stay",
+
+  // Sinai CTA
+  "sinai.cta.title": "Ready to Explore Sinai?",
+  "sinai.cta.description": "Plan your perfect Sinai adventure with our expert guides and curated experiences.",
+  "sinai.cta.button": "Plan Your Sinai Trip",
+
+  // Sinai Activities
+  "sinai.activities.title": "Popular Activities",
+  "sinai.activities.hiking.cta": "Book Hiking Trip",
+  "sinai.activities.diving.cta": "Book Diving Trip",
+
+  "sinai.activities.hiking.title": "Mountain Hiking",
+  "sinai.activities.hiking.description": "Climb Mount Sinai's peak for stunning sunrise views, or explore colorful canyons in the Colored Canyon.",
+  "sinai.activities.diving.title": "Diving & Snorkeling",
+  "sinai.activities.diving.description": "Discover the vibrant underwater world of the Red Sea, home to colorful coral reefs and diverse marine life.",
+
+  // Sinai Attractions
+  "sinai.attractions.stCatherine.title": "Saint Catherine's Monastery",
+  "sinai.attractions.stCatherine.description": "One of the world's oldest working monasteries, located at the foot of Mount Sinai.",
+  "sinai.attractions.dahab.title": "Dahab",
+  "sinai.attractions.dahab.description": "Laid-back coastal town famous for world-class diving and relaxed atmosphere.",
+  "sinai.attractions.sharm.title": "Sharm El-Sheikh",
+  "sinai.attractions.sharm.description": "Premier Red Sea resort destination with luxury hotels and diving centers.",
+
+  // Mediterranean translations
+  "mediterranean.title": "Where Coast Meets Culture",
+  "mediterranean.subtitle": "Discover the magic of Egypt's Mediterranean, from Alexandria's ancient treasures to pristine beaches and vibrant coastal cities.",
+  "mediterranean.description": "Egypt's Mediterranean coast offers a perfect blend of history, culture, and natural beauty. From the ancient Library of Alexandria to the crystal-clear waters of Marsa Matrouh, this region showcases the diverse heritage that has shaped Egypt over millennia.",
+
+  "mediterranean.tabs.historic": "Historic Sites",
+  "mediterranean.tabs.beaches": "Beaches",
+  "mediterranean.tabs.cultural": "Cultural Landmarks",
+  "mediterranean.tabs.trips": "Day Trips",
+  "mediterranean.tabs.cities": "Coastal Cities",
+
+  "mediterranean.cta.title": "Ready to Explore the Mediterranean?",
+  "mediterranean.cta.description": "Plan your perfect coastal journey with our experts and curated experiences.",
+  "mediterranean.cta.button": "Explore the Northern Coast",
+
+  "mediterranean.attractions.title": "Must-Visit Attractions",
+  "mediterranean.attractions.alexandria.title": "Alexandria",
+  "mediterranean.attractions.alexandria.description": "Explore the historic city of Alexandria, home to the ancient library, Qaitbay Citadel, and Roman Theater. Experience the blend of Mediterranean and Egyptian cultures in this coastal gem.",
+
+  "mediterranean.attractions.marsaMatrouh.title": "Marsa Matrouh",
+  "mediterranean.attractions.marsaMatrouh.description": "Discover pristine beaches and crystal-clear waters in Marsa Matrouh. This coastal paradise offers perfect conditions for swimming, diving, and enjoying the Mediterranean sun.",
+  "mediterranean.attractions.marsaMatrouh.type": "Beach Resort",
+  "mediterranean.attractions.marsaMatrouh.bestTime": "May to October",
+
+  "mediterranean.attractions.elAlamein.title": "El Alamein",
+  "mediterranean.attractions.elAlamein.description": "Visit the WWII battlefields and memorials in El Alamein. Learn about the crucial role this town played in the North African campaign.",
+  "mediterranean.attractions.elAlamein.type": "Historic Beach",
+  "mediterranean.attractions.elAlamein.bestTime": "May to October",
+
+  "mediterranean.attractions.bibliotheca.title": "Bibliotheca Alexandrina",
+  "mediterranean.attractions.bibliotheca.description": "Modern revival of the ancient Library of Alexandria, a cultural and architectural masterpiece.",
+  "mediterranean.attractions.bibliotheca.type": "Cultural Site",
+  "mediterranean.attractions.bibliotheca.bestTime": "Year Round",
+
+  "mediterranean.attractions.qaitbay.title": "Qaitbay Citadel",
+  "mediterranean.attractions.qaitbay.description": "15th-century fortress built on the site of the ancient Lighthouse of Alexandria.",
+  "mediterranean.attractions.qaitbay.type": "Historic Fortress",
+  "mediterranean.attractions.qaitbay.bestTime": "Year Round",
+
+  "mediterranean.attractions.romanAmphitheatre.title": "Roman Amphitheatre",
+  "mediterranean.attractions.romanAmphitheatre.description": "Well-preserved Roman theater in the heart of Alexandria.",
+  "mediterranean.attractions.romanAmphitheatre.type": "Archaeological Site",
+  "mediterranean.attractions.romanAmphitheatre.bestTime": "Year Round",
+
+  "mediterranean.attractions.agibaBeach.title": "Agiba Beach",
+  "mediterranean.attractions.agibaBeach.description": "Hidden gem with turquoise waters and dramatic cliffs.",
+  "mediterranean.attractions.agibaBeach.type": "Natural Beach",
+  "mediterranean.attractions.agibaBeach.bestTime": "May to October",
+
+  "mediterranean.attractions.localCafes.title": "Traditional Cafes",
+  "mediterranean.attractions.localCafes.description": "Experience authentic coffee culture in historic cafes.",
+  "mediterranean.attractions.localCafes.type": "Cultural Experience",
+  "mediterranean.attractions.localCafes.bestTime": "Year Round",
+
+  "mediterranean.attractions.souks.title": "Local Markets",
+  "mediterranean.attractions.souks.description": "Vibrant markets offering everything from spices to antiques.",
+  "mediterranean.attractions.souks.type": "Shopping",
+  "mediterranean.attractions.souks.bestTime": "Year Round",
+
+  "mediterranean.attractions.seafood.title": "Seafood Restaurants",
+  "mediterranean.attractions.seafood.description": "Fresh Mediterranean seafood in charming coastal settings.",
+  "mediterranean.attractions.seafood.type": "Dining",
+  "mediterranean.attractions.seafood.bestTime": "Year Round",
+
+  "mediterranean.attractions.portSaid.title": "Port Said",
+  "mediterranean.attractions.portSaid.description": "Historic port city at the Mediterranean entrance of the Suez Canal.",
+  "mediterranean.attractions.portSaid.type": "Port City",
+  "mediterranean.attractions.portSaid.highlights.canalHistory": "Canal History",
+  "mediterranean.attractions.portSaid.highlights.architecture": "Colonial Architecture",
+  "mediterranean.attractions.portSaid.highlights.museum": "Maritime Museum",
+
+  "mediterranean.attractions.ismailia.title": "Ismailia",
+  "mediterranean.attractions.ismailia.description": "Garden city on the banks of the Suez Canal with French colonial charm.",
+  "mediterranean.attractions.ismailia.type": "Garden City",
+  "mediterranean.attractions.ismailia.highlights.gardens": "Canal Gardens",
+  "mediterranean.attractions.ismailia.highlights.lakeView": "Lake Views",
+  "mediterranean.attractions.ismailia.highlights.museum": "Museum",
+
+  "mediterranean.activities.title": "Activities & Experiences",
+  "mediterranean.activities.beach.title": "Beach Activities",
+  "mediterranean.activities.beach.description": "Enjoy swimming, diving, and water sports in the clear Mediterranean waters.",
+  "mediterranean.activities.beach.cta": "Explore Beaches",
+  "mediterranean.activities.history.title": "Historical Tours",
+  "mediterranean.activities.history.description": "Discover ancient ruins, historical landmarks, and cultural sites.",
+  "mediterranean.activities.history.cta": "Book a Tour",
+
   // Higher Egypt translations
   "higherEgypt.hero.title": "Timeless Treasures of the South",
   "higherEgypt.hero.subtitle": "From Luxor's magnificent temples to Aswan's Nubian culture, discover the ancient wonders and living traditions of Upper Egypt.",
