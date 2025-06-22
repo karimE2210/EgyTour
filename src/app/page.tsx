@@ -8,6 +8,7 @@ import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
 import { HeroSection } from "@/components/home/hero-section";
 import { FeaturedSection } from "@/components/home/featured-section";
+import { FamilyAdventures } from "@/components/home/family-adventures";
 import { PopularDestinations } from "@/components/home/popular-destinations";
 import { PlanTrip } from "@/components/home/plan-trip";
 import { CTASection } from "@/components/home/cta-section";
@@ -52,6 +53,9 @@ export default function Home() {
       
       {/* 🎨 FEATURED HIGHLIGHTS */}
       <FeaturedSection />
+      
+      {/* 👨‍👩‍👧‍👦 FAMILY ADVENTURES SECTION */}
+      <FamilyAdventures />
       
       {/* 🗺️ POPULAR DESTINATIONS */}
       <PopularDestinations />
