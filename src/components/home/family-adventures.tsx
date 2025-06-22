@@ -12,23 +12,23 @@ export function FamilyAdventures() {
   const familyActivities = [
     {
       icon: Users,
-      title: "Family-Friendly Sites",
-      description: "Explore pyramids, temples, and museums designed for all ages"
+      title: t("home.featured.familyAdventures.familySites.title"),
+      description: t("home.featured.familyAdventures.familySites.description")
     },
     {
       icon: Camera,
-      title: "Photo Opportunities",
-      description: "Capture magical moments at Egypt's most iconic landmarks"
+      title: t("home.featured.familyAdventures.photoOps.title"),
+      description: t("home.featured.familyAdventures.photoOps.description")
     },
     {
       icon: Heart,
-      title: "Safe Adventures",
-      description: "Guided tours and activities perfect for children and adults"
+      title: t("home.featured.familyAdventures.safeAdventures.title"),
+      description: t("home.featured.familyAdventures.safeAdventures.description")
     },
     {
       icon: Star,
-      title: "Educational Fun",
-      description: "Learn about ancient history while having an amazing time"
+      title: t("home.featured.familyAdventures.educational.title"),
+      description: t("home.featured.familyAdventures.educational.description")
     }
   ];
 
@@ -76,12 +76,12 @@ export function FamilyAdventures() {
             <div className="flex flex-col sm:flex-row gap-4">
               <Button asChild size="lg" className="bg-orange-500 hover:bg-orange-600 text-white">
                 <Link href="/things-to-do">
-                  Explore Family Activities
+                  {t("home.featured.familyAdventures.exploreActivities")}
                 </Link>
               </Button>
               <Button asChild variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-black">
                 <Link href="/plan-your-trip">
-                  Plan Family Trip
+                  {t("home.featured.familyAdventures.planTrip")}
                 </Link>
               </Button>
             </div>
@@ -95,13 +95,13 @@ export function FamilyAdventures() {
                   <Users className="w-6 h-6 text-blue-600" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-gray-900 mb-2">Kid-Friendly Pyramids Tour</h3>
+                  <h3 className="font-semibold text-gray-900 mb-2">{t("home.featured.familyAdventures.pyramidsTour.title")}</h3>
                   <p className="text-gray-600 text-sm mb-3">
-                    Special guided tours designed for families with interactive storytelling and fun facts for children.
+                    {t("home.featured.familyAdventures.pyramidsTour.description")}
                   </p>
                   <div className="flex items-center text-sm text-gray-500">
                     <Star className="w-4 h-4 text-yellow-400 mr-1" />
-                    <span>4.8 • Perfect for ages 6+</span>
+                    <span>{t("home.featured.familyAdventures.pyramidsTour.rating")}</span>
                   </div>
                 </div>
               </div>
@@ -113,13 +113,13 @@ export function FamilyAdventures() {
                   <Camera className="w-6 h-6 text-green-600" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-gray-900 mb-2">Desert Family Camp</h3>
+                  <h3 className="font-semibold text-gray-900 mb-2">{t("home.featured.familyAdventures.desertCamp.title")}</h3>
                   <p className="text-gray-600 text-sm mb-3">
-                    Safe desert camping experience with family tents, camel rides, and stargazing activities.
+                    {t("home.featured.familyAdventures.desertCamp.description")}
                   </p>
                   <div className="flex items-center text-sm text-gray-500">
                     <Star className="w-4 h-4 text-yellow-400 mr-1" />
-                    <span>4.9 • All ages welcome</span>
+                    <span>{t("home.featured.familyAdventures.desertCamp.rating")}</span>
                   </div>
                 </div>
               </div>
@@ -131,13 +131,13 @@ export function FamilyAdventures() {
                   <Heart className="w-6 h-6 text-purple-600" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-gray-900 mb-2">Nile Family Cruise</h3>
+                  <h3 className="font-semibold text-gray-900 mb-2">{t("home.featured.familyAdventures.nileCruise.title")}</h3>
                   <p className="text-gray-600 text-sm mb-3">
-                    Gentle Nile cruise with family cabins, kids' activities, and educational programs about ancient Egypt.
+                    {t("home.featured.familyAdventures.nileCruise.description")}
                   </p>
                   <div className="flex items-center text-sm text-gray-500">
                     <Star className="w-4 h-4 text-yellow-400 mr-1" />
-                    <span>4.7 • Family suites available</span>
+                    <span>{t("home.featured.familyAdventures.nileCruise.rating")}</span>
                   </div>
                 </div>
               </div>

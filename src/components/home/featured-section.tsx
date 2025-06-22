@@ -16,20 +16,6 @@ export function FeaturedSection() {
       image: "/images/mypics/Antiguo Egipto.jpeg",
       link: "/art-culture",
     },
-    {
-      id: "family-adventures",
-      title: t('home.featured.familyAdventures.title'),
-      description: t('home.featured.familyAdventures.description'),
-      image: "/images/mypics/family-adventures.jpeg",
-      link: "/things-to-do/family-adventures",
-    },
-    {
-      id: "local-experiences",
-      title: t('home.featured.localExperiences.title'),
-      description: t('home.featured.localExperiences.description'),
-      image: "/images/mypics/nile-cruise.jpeg",
-      link: "/things-to-do/local-experiences",
-    },
   ];
 
   return (
@@ -76,12 +62,14 @@ export function FeaturedSection() {
         </div>
 
         {/* 🎨 FEATURED GRID */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-1 gap-8 max-w-md mx-auto">
           {/* 
             ⬆️ EDIT HERE TO CHANGE GRID LAYOUT:
             - grid-cols-1 = 1 column on mobile
-            - md:grid-cols-3 = 3 columns on desktop
+            - md:grid-cols-1 = 1 column on desktop (centered)
             - gap-8 = gap between items
+            - max-w-md = maximum width for single card
+            - mx-auto = center the card
           */}
           
           {featuredItems.map((item) => (

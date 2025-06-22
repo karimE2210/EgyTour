@@ -6,6 +6,7 @@ import { MusicPlayer } from '@/components/music-player';
 import SoundWave from '@/components/ui/sound-wave';
 import { ReactNode } from 'react';
 import Link from 'next/link';
+import { useTranslation } from '@/hooks/use-translation';
 
 // A reusable card component for consistent section styling
 const ArtCard = ({ icon, title, children }: { icon: ReactNode, title: string, children: ReactNode }) => (
@@ -21,25 +22,27 @@ const ArtCard = ({ icon, title, children }: { icon: ReactNode, title: string, ch
 );
 
 export default function ArtAndCulturePage() {
+  const { t } = useTranslation();
+
   const artLegacy = [
     { 
       icon: Palette, 
-      title: "Ancient Egyptian Art", 
-      description: "Art was not for art's sake; it was a sacred tool for eternity. The monolithic temples, intricate tomb paintings, and symbolic hieroglyphs were designed to guide souls, honor deities, and preserve cosmic order. Every color and form had a profound spiritual meaning.",
+      title: t("artCulture.artisticLegacy.ancientEgyptian.title"), 
+      description: t("artCulture.artisticLegacy.ancientEgyptian.description"),
       image: "/images/mypics/ancient.jpeg",
       link: "/art-culture/ancient-egyptian-art"
     },
     { 
       icon: Drama, 
-      title: "Greco-Roman Influence", 
-      description: "With the arrival of Alexander the Great, Egyptian art began a dialogue with Hellenistic culture. Alexandria became a hub of creativity where classical sculpture, detailed mosaics, and funerary portraits like the Fayum mummy portraits blended styles to reflect a new, cosmopolitan identity.",
+      title: t("artCulture.artisticLegacy.grecoRoman.title"), 
+      description: t("artCulture.artisticLegacy.grecoRoman.description"),
       image: "/images/mypics/rom.jpeg",
       link: "/art-culture/Greco-Roman-Influence"
     },
     { 
       icon: Hand, 
-      title: "Islamic Art", 
-      description: "Under Islamic rule, art found new expression in the spiritual pursuit of geometry and calligraphy. Mosques, palaces, and public fountains were adorned with breathtaking arabesques, kufic script, and mashrabiya woodwork, turning mathematics into divine beauty.",
+      title: t("artCulture.artisticLegacy.islamic.title"), 
+      description: t("artCulture.artisticLegacy.islamic.description"),
       image: "/images/mypics/sul.jpeg",
       link: "/art-culture/Islamic-Art"
     }
@@ -54,17 +57,17 @@ export default function ArtAndCulturePage() {
   ];
   
   const cuisineItems = [
-    { name: 'Koshary', image: '/images/mypics/food/Koshari.jpeg', recipe: '1. Cook rice, lentils, and macaroni separately. 2. Layer them in a bowl. 3. Top with chickpeas and fried onions. 4. Drizzle with spicy tomato-vinegar sauce.' },
-    { name: 'Ful Medames', image: '/images/mypics/food/ful medamas.jpeg', recipe: '1. Slow-cook fava beans until tender. 2. Mash lightly. 3. Season with salt, cumin, and olive oil. 4. Garnish with parsley and serve with bread.' },
-    { name: 'Molokhia', image: '/images/mypics/food/molkhia.jpeg', recipe: '1. Sauté minced garlic in butter until golden. 2. Add chopped jute leaves and chicken broth. 3. Simmer until thickened. 4. Serve hot over rice.' },
-    { name: 'Fattah', image: '/images/mypics/food/fattah.jpeg', recipe: '1. Layer torn, fried flatbread in a dish. 2. Cover with cooked rice. 3. Pour a garlic & vinegar infused tomato sauce over the top. 4. Garnish with toasted nuts.' },
+    { name: t('artCulture.cuisine.koshary'), image: '/images/mypics/food/Koshari.jpeg', recipe: t('artCulture.cuisine.kosharyRecipe') },
+    { name: t('artCulture.cuisine.fulMedames'), image: '/images/mypics/food/ful medamas.jpeg', recipe: t('artCulture.cuisine.fulMedamesRecipe') },
+    { name: t('artCulture.cuisine.molokhia'), image: '/images/mypics/food/molkhia.jpeg', recipe: t('artCulture.cuisine.molokhiaRecipe') },
+    { name: t('artCulture.cuisine.fattah'), image: '/images/mypics/food/fattah.jpeg', recipe: t('artCulture.cuisine.fattahRecipe') },
   ];
 
   const folklore = [
-    { title: "Tanoura & Belly Dancing" },
-    { title: "Nubian Musical Instruments" },
-    { title: "Bedouin Embroidery (Talli)" },
-    { title: "Moulid Festivals & Chants" },
+    { title: t("artCulture.folklore.tanoura") },
+    { title: t("artCulture.folklore.nubian") },
+    { title: t("artCulture.folklore.bedouin") },
+    { title: t("artCulture.folklore.moulid") },
   ];
   
   return (
@@ -74,16 +77,16 @@ export default function ArtAndCulturePage() {
         {/* Intro Section */}
         <section className="text-center max-w-4xl mx-auto">
           <h1 className="text-5xl md:text-6xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-amber-800 to-stone-700 dark:from-amber-400 dark:to-stone-300">
-            The Art & Soul of Egypt
+            {t("artCulture.title")}
           </h1>
           <p className="text-lg md:text-xl leading-relaxed text-stone-700 dark:text-stone-300">
-            Egypt's spirit spans millennia—from temple grandeur and hieroglyphs to Islamic geometry, vibrant Nubian murals, and the pulse of contemporary life. Explore a culture breathing through every mosaic, melody, and marketplace.
+            {t("artCulture.intro")}
           </p>
         </section>
         
         {/* Art Legacy */}
-        <ArtCard icon={<Palette size={28}/>} title="Egypt's Artistic Legacy">
-          <p>Art in Egypt is a conversation across civilizations. Each era left its indelible mark, creating a layered identity that is both ancient and alive.</p>
+        <ArtCard icon={<Palette size={28}/>} title={t("artCulture.artisticLegacy.title")}>
+          <p>{t("artCulture.artisticLegacy.intro")}</p>
           <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
             {artLegacy.map(item => {
               const Icon = item.icon; 
@@ -102,7 +105,7 @@ export default function ArtAndCulturePage() {
                         href={item.link}
                         className="inline-flex items-center gap-2 px-4 py-2 bg-amber-600/90 text-white rounded-lg shadow-md hover:bg-amber-600 transition-colors text-sm font-medium"
                       >
-                        Explore More
+                        {t("artCulture.artisticLegacy.exploreMore")}
                         <ArrowRight size={16} />
                       </Link>
                     )}
@@ -114,14 +117,14 @@ export default function ArtAndCulturePage() {
         </ArtCard>
         
         {/* Cinema */}
-        <ArtCard icon={<Clapperboard size={28}/>} title="Silver Screen Legacy">
+        <ArtCard icon={<Clapperboard size={28}/>} title={t("artCulture.cinema.title")}>
           <div className="grid md:grid-cols-2 gap-12">
             <div>
-              <p>Once dubbed the "Hollywood of the Middle East," Egyptian cinema's Golden Age in the 1940s-60s produced a wave of films that shaped the region's cultural identity. These movies were more than entertainment; they were powerful reflections of society, tackling themes of love, nationalism, and social justice with a unique blend of drama, comedy, and music that has captivated audiences for generations.</p>
+              <p>{t("artCulture.cinema.description")}</p>
               <ul className="list-disc list-inside mt-4 space-y-1">
-                <li><span className="font-bold">Stars:</span> Faten Hamama, Omar Sharif, Soad Hosny, Rushdy Abaza, Shadia</li>
-                <li><span className="font-bold">Iconic Films:</span> The Nightingale's Prayer, The Land, Cairo Station, The Mummy (Al-Mummia)</li>
-                <li><span className="font-bold">Hubs:</span> The historic studios of Cairo & Alexandria</li>
+                <li><span className="font-bold">{t("artCulture.cinema.stars")}:</span> {t("artCulture.cinema.starsList")}</li>
+                <li><span className="font-bold">{t("artCulture.cinema.iconicFilms")}:</span> {t("artCulture.cinema.filmsList")}</li>
+                <li><span className="font-bold">{t("artCulture.cinema.hubs")}:</span> {t("artCulture.cinema.hubsList")}</li>
               </ul>
               <a 
                 href="https://letterboxd.com/kanafani/list/top-100-egyptian-movies/" 
@@ -129,7 +132,7 @@ export default function ArtAndCulturePage() {
                 rel="noopener noreferrer"
                 className="inline-block mt-6 px-4 py-2 bg-amber-800/90 text-white rounded-lg shadow-md hover:bg-amber-800 transition-colors"
               >
-                Explore the Top 100 Films
+                {t("artCulture.cinema.exploreTopFilms")}
               </a>
             </div>
             <div className="flex gap-4 overflow-x-auto pb-4 scrollbar-hide">
@@ -143,9 +146,9 @@ export default function ArtAndCulturePage() {
         </ArtCard>
 
         {/* Music */}
-        <ArtCard icon={<Music size={28}/>} title="Echoes of Egypt">
+        <ArtCard icon={<Music size={28}/>} title={t("artCulture.music.title")}>
           <div className="md:w-3/4 mx-auto text-center">
-            <p className="mb-8">From ancient rhythms and Sufi chants to the timeless voice of Umm Kulthum and modern indie pop, music is the heartbeat of Egypt.</p>
+            <p className="mb-8">{t("artCulture.music.description")}</p>
             <div className="flex items-center justify-center gap-8 md:gap-16">
               <div className="hidden md:block">
                 <SoundWave />
@@ -161,8 +164,8 @@ export default function ArtAndCulturePage() {
         </ArtCard>
 
         {/* Cuisine */}
-        <ArtCard icon={<Utensils size={28}/>} title="A Taste of Tradition">
-          <p className="text-center mb-8">Egyptian cuisine is a rich tapestry of flavors inherited from generations of home cooks. Centered around legumes, vegetables, and hearty grains, it's a cuisine built on shared meals and recipes passed down with love.</p>
+        <ArtCard icon={<Utensils size={28}/>} title={t("artCulture.cuisine.title")}>
+          <p className="text-center mb-8">{t("artCulture.cuisine.description")}</p>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {cuisineItems.map(item => (
               <div key={item.name} className="relative h-64 rounded-lg overflow-hidden group shadow-lg">
@@ -174,7 +177,7 @@ export default function ArtAndCulturePage() {
                 {/* Hover overlay for recipe */}
                 <div className="absolute inset-0 bg-black/80 flex items-center justify-center p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <div className="text-center text-white">
-                    <h4 className="font-bold mb-2 border-b border-amber-500/50 pb-1">{item.name} Recipe</h4>
+                    <h4 className="font-bold mb-2 border-b border-amber-500/50 pb-1">{item.name} {t("artCulture.cuisine.recipe")}</h4>
                     <p className="text-xs leading-relaxed">{item.recipe}</p>
                   </div>
                 </div>
@@ -186,16 +189,16 @@ export default function ArtAndCulturePage() {
         <div className="grid md:grid-cols-5 gap-12 items-start">
           {/* Culture & Identity */}
           <div className="md:col-span-3">
-            <ArtCard icon={<Users size={28}/>} title="Culture & Everyday Traditions">
-              <p>Beyond the monuments, Egypt's true essence is found in its daily rhythms, its shared meals, and the resilient warmth of its people.</p>
+            <ArtCard icon={<Users size={28}/>} title={t("artCulture.culture.title")}>
+              <p>{t("artCulture.culture.description")}</p>
               <div className="grid md:grid-cols-2 gap-x-6 mt-4">
                 <div>
-                  <h4 className="font-bold mt-4">Daily Life</h4>
-                  <p className="text-sm">Vibrant souks, the aroma of koshary, endless cups of tea, and animated storytelling.</p>
+                  <h4 className="font-bold mt-4">{t("artCulture.culture.dailyLife.title")}</h4>
+                  <p className="text-sm">{t("artCulture.culture.dailyLife.description")}</p>
                 </div>
                 <div>
-                  <h4 className="font-bold mt-4">Languages & Faith</h4>
-                  <p className="text-sm">Arabic is the official language, with unique regional dialects. Islam and Coptic Christianity have coexisted for centuries.</p>
+                  <h4 className="font-bold mt-4">{t("artCulture.culture.languagesFaith.title")}</h4>
+                  <p className="text-sm">{t("artCulture.culture.languagesFaith.description")}</p>
                 </div>
               </div>
             </ArtCard>
@@ -203,8 +206,8 @@ export default function ArtAndCulturePage() {
           
           {/* Folklore */}
           <div className="md:col-span-2">
-            <ArtCard icon={<MapPin size={28}/>} title="Folklore & Local Rituals">
-              <p className="mb-4">Egypt's heritage is alive in its diverse folk traditions, which vary from the deserts to the Nile Delta.</p>
+            <ArtCard icon={<MapPin size={28}/>} title={t("artCulture.folklore.title")}>
+              <p className="mb-4">{t("artCulture.folklore.description")}</p>
               <ul className="space-y-2">
                 {folklore.map(item => (
                   <li key={item.title} className="flex items-center gap-3 text-sm">
