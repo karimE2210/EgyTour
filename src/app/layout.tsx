@@ -9,6 +9,7 @@ import { Inter } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
 import { LanguageProvider } from "@/contexts/language-context";
 import { Toaster } from "@/components/ui/toaster";
+import EgyptTourismChatbot from "@/components/chat/EgyptTourismChatbot";
 
 /* 📝 FONT CONFIGURATION */
 const inter = Inter({ subsets: ["latin"] });
@@ -33,7 +34,7 @@ export default function RootLayout({
         - lang="en" = English (try "ar" for Arabic)
         - suppressHydrationWarning = prevents hydration warnings
       */}
-      
+
       {/* 📦 BODY CONTAINER */}
       <body className={inter.className}>
         {/* 
@@ -41,7 +42,7 @@ export default function RootLayout({
           - inter.className = applies Inter font
           - Add custom classes for global styles
         */}
-        
+
         {/* 🎨 THEME PROVIDER - Handles dark/light mode */}
         <ThemeProvider
           attribute="class"
@@ -56,7 +57,7 @@ export default function RootLayout({
             - enableSystem = allows system theme detection
             - disableTransitionOnChange = prevents flash on theme change
           */}
-          
+
           {/* 🌍 LANGUAGE PROVIDER - Handles translations */}
           <LanguageProvider>
             {/* 
@@ -64,7 +65,7 @@ export default function RootLayout({
               - Add defaultLanguage prop
               - Add supportedLanguages prop
             */}
-            
+
             {/* 📝 MAIN CONTENT */}
             <Providers>
               <div className="relative min-h-screen flex flex-col">
@@ -72,6 +73,15 @@ export default function RootLayout({
                 <main className="flex-1 pt-16">{children}</main>
                 <Footer />
               </div>
+
+              {/* 💬 CHATBOT WIDGET - Available on all pages */}
+              <EgyptTourismChatbot />
+              {/* 
+                ⬆️ EDIT HERE TO CHANGE CHATBOT CONFIG:
+                - Add apiUrl prop for custom backend
+                - Add theme prop for styling
+                - Add position prop for placement
+              */}
             </Providers>
             {/* 
               ⬆️ EDIT HERE TO ADD GLOBAL ELEMENTS:
@@ -79,7 +89,7 @@ export default function RootLayout({
               - Add navigation component
               - Add analytics scripts
             */}
-            
+
             {/* 🔔 TOAST NOTIFICATIONS */}
             <Toaster />
             {/* 

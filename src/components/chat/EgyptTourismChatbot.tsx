@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import { useSession } from "next-auth/react";
 
 interface ChatMessage {
   id: string;
@@ -34,6 +35,7 @@ interface Props {
 }
 
 const EgyptTourismChatbot = ({ config }: Props) => {
+  const [mounted, setMounted] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [currentView, setCurrentView] = useState<ViewType>("chat");
   const [selectedTrip, setSelectedTrip] = useState<TripType | null>(null);
@@ -43,163 +45,453 @@ const EgyptTourismChatbot = ({ config }: Props) => {
   const [inputMessage, setInputMessage] = useState("");
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [sessionId, setSessionId] = useState<string | null>(null);
+  const { data: session } = useSession();
 
   const apiUrl = config?.apiUrl || "http://localhost:5050";
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const handleAuthAction = (action: "login" | "signup") => {
+    const returnUrl = encodeURIComponent(window.location.href);
+    window.open(`/${action}?callbackUrl=${returnUrl}`, "_blank");
+  };
+
+  if (!mounted) {
+    return null;
+  }
 
   const tripData = {
     "ancient-egypt": {
       title: "Ancient Egypt Explorer",
-      subtitle: "Discover the mysteries of pharaohs and pyramids",
-      days: 5,
-      image: "/images/ancient_tour.jpg",
+      subtitle: "Pyramids, Temples & Pharaohs",
+      days: 3,
+      image:
+        "https://images.unsplash.com/photo-1568322445389-f64ac2515020?w=450&h=300&fit=crop&auto=format",
     },
     "red-sea": {
-      title: "Red Sea Diving Adventure",
-      subtitle: "Explore vibrant coral reefs and marine life",
-      days: 4,
-      image: "/images/red-sea-diving.jpg",
+      title: "Red Sea Adventure",
+      subtitle: "Diving, Snorkeling & Beach Bliss",
+      days: 3,
+      image:
+        "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=450&h=300&fit=crop&auto=format",
     },
     "desert-safari": {
       title: "Desert Safari Adventure",
-      subtitle: "Experience Bedouin culture and desert landscapes",
+      subtitle: "Camping, Stargazing & Bedouin Culture",
       days: 3,
-      image: "/images/safari.jpg",
+      image:
+        "https://images.unsplash.com/photo-1540979388789-6cee28a1cdc9?w=450&h=300&fit=crop&auto=format",
     },
   };
 
   const itineraryData = {
     "ancient-egypt": {
-      title: "5-Day Ancient Egypt Explorer",
+      title: "3-Day Ancient Egypt Explorer",
       subtitle:
-        "Discover the mysteries of pharaohs and pyramids with expert guides and authentic experiences.",
-      totalDays: 5,
+        "Journey through 5,000 years of history visiting iconic pyramids, ancient temples, and world-class museums.",
+      totalDays: 3,
       days: [
         {
           day: 1,
           description:
-            "Start your journey with a visit to the Great Pyramids, enjoy a traditional lunch at a local restaurant, and end with the spectacular Sound & Light Show.",
+            "Start your journey with the iconic Giza Pyramids, explore the Great Sphinx, and enjoy a traditional Egyptian lunch with pyramid views.",
           activities: [
             {
               time: "Morning",
-              title: "Great Pyramid of Giza",
+              title: "Great Pyramid of Khufu",
               description:
-                "The Great Pyramid, also known as Khufu's Pyramid, offers breathtaking views with ancient limestone construction, chambers, and... Read more",
+                "Explore the last surviving Wonder of the Ancient World. Bring water and comfortable shoes. Entry to pyramid chamber requires separate ticket.",
               image:
                 "https://images.unsplash.com/photo-1568322445389-f64ac2515020?w=400&h=250&fit=crop&auto=format",
-              type: "Attraction",
+              type: "Historical Site",
               location: "Giza Plateau",
-              duration: "≈ 3 h people typically spend here",
+              duration: "2 hours",
+            },
+            {
+              time: "Morning",
+              title: "Pyramid of Khafre & Menkaure",
+              description:
+                "Visit the second and third pyramids with excellent photo opportunities. Best views from the panoramic viewpoint behind the complex.",
+              image:
+                "https://images.unsplash.com/photo-1568322445389-f64ac2515020?w=400&h=250&fit=crop&auto=format",
+              type: "Historical Site",
+              location: "Giza Plateau",
+              duration: "1.5 hours",
+            },
+            {
+              time: "Morning",
+              title: "The Great Sphinx",
+              description:
+                "Marvel at the enigmatic guardian of the pyramids. The Sphinx Temple is included and worth exploring.",
+              image:
+                "https://images.unsplash.com/photo-1568322445389-f64ac2515020?w=400&h=250&fit=crop&auto=format",
+              type: "Monument",
+              location: "Giza Plateau",
+              duration: "45 minutes",
             },
             {
               time: "Lunch",
-              title: "Pyramid View Restaurant",
+              title: "Traditional Egyptian Lunch",
               description:
-                "Traditional Egyptian cuisine with stunning pyramid views. Authentic dishes made with fresh ingredients from local farms... Read more",
+                "Authentic local cuisine with pyramid views. Try koshari, ful medames, and fresh bread.",
               image:
                 "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=250&fit=crop&auto=format",
-              type: "Egyptian cuisine",
-              location: "Giza",
-              duration: null,
+              type: "Dining",
+              location: "Local Restaurant",
+              duration: "1 hour",
             },
             {
-              time: "Evening",
-              title: "Sound & Light Show",
+              time: "Afternoon",
+              title: "Solar Boat Museum",
               description:
-                "Spectacular multimedia show illuminating the Sphinx and pyramids with ancient Egyptian history and legends... Read more",
+                "See the reconstructed solar boat of Pharaoh Khufu. Fascinating insight into ancient Egyptian burial practices.",
               image:
-                "https://images.unsplash.com/photo-1539650116574-75c0c6d73f6e?w=400&h=250&fit=crop&auto=format",
-              type: "Art & Culture",
-              location: "Sphinx Complex",
-              duration: "≈ 1.5 h show duration",
-              dates: ["15\nDec 25", "22\nDec 25"],
+                "https://images.unsplash.com/photo-1568322445389-f64ac2515020?w=400&h=250&fit=crop&auto=format",
+              type: "Museum",
+              location: "Giza",
+              duration: "1 hour",
             },
           ],
         },
         {
           day: 2,
           description:
-            "Explore the Egyptian Museum, visit Khan El Khalili bazaar for shopping, and enjoy a traditional Nile dinner cruise.",
+            "Explore the Egyptian Museum's treasures, shop in Khan El Khalili bazaar, and visit historic Islamic Cairo sites.",
           activities: [
             {
               time: "Morning",
               title: "Egyptian Museum",
               description:
-                "Home to the world's most extensive collection of ancient Egyptian artifacts, including treasures from Tutankhamun's tomb... Read more",
+                "World's finest collection of ancient Egyptian artifacts. Don't miss Tutankhamun's treasures and the Royal Mummy Room.",
               image:
                 "https://images.unsplash.com/photo-1568322445389-f64ac2515020?w=400&h=250&fit=crop&auto=format",
               type: "Museum",
-              location: "Cairo",
-              duration: "≈ 4 h people typically spend here",
+              location: "Tahrir Square, Cairo",
+              duration: "3 hours",
             },
             {
               time: "Lunch",
-              title: "Khan El Khalili Bazaar",
+              title: "Lunch at Naguib Mahfouz Cafe",
               description:
-                "Historic marketplace offering traditional crafts, spices, and authentic Egyptian street food in a vibrant atmosphere... Read more",
+                "Traditional atmosphere in the heart of Islamic Cairo. Try the mixed grill and mint tea.",
               image:
                 "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=250&fit=crop&auto=format",
-              type: "Shopping & Dining",
+              type: "Dining",
+              location: "Khan El Khalili",
+              duration: "1 hour",
+            },
+            {
+              time: "Afternoon",
+              title: "Khan El Khalili Bazaar",
+              description:
+                "Shop for authentic Egyptian souvenirs and crafts. Bargain is expected. Start at 30% of asking price.",
+              image:
+                "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=250&fit=crop&auto=format",
+              type: "Shopping",
               location: "Islamic Cairo",
-              duration: null,
+              duration: "2 hours",
+            },
+            {
+              time: "Afternoon",
+              title: "Al-Azhar Mosque",
+              description:
+                "One of the oldest and most important mosques in Islam. Dress modestly. Remove shoes before entering.",
+              image:
+                "https://images.unsplash.com/photo-1568322445389-f64ac2515020?w=400&h=250&fit=crop&auto=format",
+              type: "Religious Site",
+              location: "Islamic Cairo",
+              duration: "45 minutes",
             },
             {
               time: "Evening",
-              title: "Nile Dinner Cruise",
+              title: "Sunset at Citadel of Saladin",
               description:
-                "Luxury dinner cruise along the Nile River with traditional entertainment, belly dancing, and panoramic city views... Read more",
+                "Panoramic views of Cairo and beautiful mosque architecture. Perfect for sunset photos of the city.",
               image:
-                "https://images.unsplash.com/photo-1539650116574-75c0c6d73f6e?w=400&h=250&fit=crop&auto=format",
-              type: "Dining & Entertainment",
-              location: "Nile River",
-              duration: "≈ 3 h cruise experience",
+                "https://images.unsplash.com/photo-1568322445389-f64ac2515020?w=400&h=250&fit=crop&auto=format",
+              type: "Historical Site",
+              location: "Citadel, Cairo",
+              duration: "1.5 hours",
+            },
+          ],
+        },
+        {
+          day: 3,
+          description:
+            "Visit ancient Saqqara and Memphis, explore the Step Pyramid, and discover the oldest stone pyramid in the world.",
+          activities: [
+            {
+              time: "Morning",
+              title: "Step Pyramid of Djoser",
+              description:
+                "Visit the world's oldest stone pyramid. This is the prototype for all Egyptian pyramids.",
+              image:
+                "https://images.unsplash.com/photo-1568322445389-f64ac2515020?w=400&h=250&fit=crop&auto=format",
+              type: "Historical Site",
+              location: "Saqqara",
+              duration: "1.5 hours",
+            },
+            {
+              time: "Morning",
+              title: "Mastaba Tombs",
+              description:
+                "Explore decorated tombs of nobles with stunning wall art. Ti and Ptahhotep tombs have the best preserved reliefs.",
+              image:
+                "https://images.unsplash.com/photo-1568322445389-f64ac2515020?w=400&h=250&fit=crop&auto=format",
+              type: "Historical Site",
+              location: "Saqqara",
+              duration: "1 hour",
+            },
+            {
+              time: "Morning",
+              title: "Memphis Open Air Museum",
+              description:
+                "Ancient capital of Egypt with colossal statues. See the massive statue of Ramesses II and ancient sphinxes.",
+              image:
+                "https://images.unsplash.com/photo-1568322445389-f64ac2515020?w=400&h=250&fit=crop&auto=format",
+              type: "Archaeological Site",
+              location: "Memphis",
+              duration: "1 hour",
+            },
+            {
+              time: "Lunch",
+              title: "Lunch in Village",
+              description:
+                "Traditional meal with local family. Authentic experience of rural Egyptian hospitality.",
+              image:
+                "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=250&fit=crop&auto=format",
+              type: "Cultural Experience",
+              location: "Local Village",
+              duration: "1 hour",
+            },
+            {
+              time: "Afternoon",
+              title: "Dahshur Pyramids",
+              description:
+                "Visit the Bent and Red Pyramids. Less crowded than Giza with excellent photo opportunities.",
+              image:
+                "https://images.unsplash.com/photo-1568322445389-f64ac2515020?w=400&h=250&fit=crop&auto=format",
+              type: "Historical Site",
+              location: "Dahshur",
+              duration: "2 hours",
             },
           ],
         },
       ],
     },
     "red-sea": {
-      title: "4-Day Red Sea Diving Adventure",
+      title: "3-Day Red Sea Adventure",
       subtitle:
-        "Explore vibrant coral reefs and marine life in crystal clear waters with professional diving guides.",
-      totalDays: 4,
+        "Explore vibrant coral reefs, encounter marine life, and relax on pristine beaches in Hurghada.",
+      totalDays: 3,
       days: [
         {
           day: 1,
           description:
-            "Begin your underwater adventure with coral reef diving, enjoy fresh seafood lunch, and relax with a sunset boat cruise.",
+            "Begin your underwater adventure with snorkeling, enjoy fresh seafood, and relax on white sandy beaches.",
           activities: [
             {
               time: "Morning",
-              title: "Coral Reef Diving",
+              title: "Hotel Check-in & Briefing",
               description:
-                "Discover colorful coral gardens and tropical fish in the pristine Red Sea waters with certified diving instructors... Read more",
+                "Settle in and receive diving/snorkeling orientation. Bring reef-safe sunscreen and underwater camera.",
               image:
                 "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400&h=250&fit=crop&auto=format",
-              type: "Water Sports",
-              location: "Hurghada Marina",
-              duration: "≈ 4 h diving experience",
+              type: "Accommodation",
+              location: "Hurghada Resort",
+              duration: "1 hour",
             },
             {
-              time: "Lunch",
-              title: "Seaside Seafood Grill",
+              time: "Morning",
+              title: "Giftun Island Snorkeling",
               description:
-                "Fresh catch of the day grilled to perfection with Mediterranean flavors and stunning sea views... Read more",
+                "Boat trip to pristine coral reefs. Two snorkeling stops with equipment provided.",
               image:
-                "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=250&fit=crop&auto=format",
-              type: "Seafood Restaurant",
-              location: "Red Sea Coast",
-              duration: null,
+                "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400&h=250&fit=crop&auto=format",
+              type: "Water Activity",
+              location: "Giftun Island",
+              duration: "4 hours",
+            },
+            {
+              time: "Afternoon",
+              title: "Beach Relaxation",
+              description:
+                "White sandy beaches and crystal-clear waters. Perfect for swimming and sunbathing.",
+              image:
+                "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400&h=250&fit=crop&auto=format",
+              type: "Beach Activity",
+              location: "Giftun Island",
+              duration: "2 hours",
             },
             {
               time: "Evening",
-              title: "Sunset Boat Cruise",
+              title: "Seafood Dinner",
               description:
-                "Relaxing cruise along the Red Sea coastline with stunning sunset views and refreshing sea breeze... Read more",
+                "Fresh catch of the day with sea views. Try the grilled red snapper and local shrimp.",
               image:
-                "https://images.unsplash.com/photo-1539650116574-75c0c6d73f6e?w=400&h=250&fit=crop&auto=format",
+                "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=250&fit=crop&auto=format",
+              type: "Dining",
+              location: "Beachfront Restaurant",
+              duration: "1.5 hours",
+            },
+            {
+              time: "Evening",
+              title: "Marina Walk",
+              description:
+                "Evening stroll through Hurghada Marina. Great for shopping and people watching.",
+              image:
+                "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400&h=250&fit=crop&auto=format",
               type: "Leisure",
+              location: "Hurghada Marina",
+              duration: "1 hour",
+            },
+          ],
+        },
+        {
+          day: 2,
+          description:
+            "Advanced diving experience with wreck exploration, dolphin encounters, and relaxing spa treatment.",
+          activities: [
+            {
+              time: "Morning",
+              title: "Dive Boat Departure",
+              description:
+                "Head to world-famous dive sites. Light breakfast provided on board.",
+              image:
+                "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400&h=250&fit=crop&auto=format",
+              type: "Transportation",
+              location: "Hurghada Marina",
+              duration: "30 minutes",
+            },
+            {
+              time: "Morning",
+              title: "Shaab Abu Nuhas Wreck Dive",
+              description:
+                "Explore sunken ships and marine life. Famous for its historic shipwrecks and coral gardens.",
+              image:
+                "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400&h=250&fit=crop&auto=format",
+              type: "Scuba Diving",
               location: "Red Sea",
-              duration: "≈ 2 h sunset cruise",
+              duration: "1 hour",
+            },
+            {
+              time: "Morning",
+              title: "Small Giftun Reef Dive",
+              description:
+                "Pristine coral formations and tropical fish. Excellent visibility and diverse marine life.",
+              image:
+                "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400&h=250&fit=crop&auto=format",
+              type: "Scuba Diving",
+              location: "Red Sea",
+              duration: "1 hour",
+            },
+            {
+              time: "Lunch",
+              title: "Lunch on Boat",
+              description:
+                "Fresh seafood and Egyptian specialties. Relax between dives and share experiences.",
+              image:
+                "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=250&fit=crop&auto=format",
+              type: "Dining",
+              location: "Dive Boat",
+              duration: "1 hour",
+            },
+            {
+              time: "Afternoon",
+              title: "Dolphin House Snorkeling",
+              description:
+                "Chance to swim with wild dolphins. Respect the dolphins - observe but don't chase.",
+              image:
+                "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400&h=250&fit=crop&auto=format",
+              type: "Wildlife Experience",
+              location: "Sha'ab El Erg",
+              duration: "1.5 hours",
+            },
+            {
+              time: "Evening",
+              title: "Traditional Hammam Spa",
+              description:
+                "Relaxing Turkish bath experience. Perfect way to unwind after a day of diving.",
+              image:
+                "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=250&fit=crop&auto=format",
+              type: "Wellness",
+              location: "Local Spa",
+              duration: "2 hours",
+            },
+          ],
+        },
+        {
+          day: 3,
+          description:
+            "Desert safari adventure with Bedouin village visit, camel riding, and stunning sunset views.",
+          activities: [
+            {
+              time: "Morning",
+              title: "Desert Safari Departure",
+              description:
+                "Adventure into the Eastern Desert. Bring hat, sunglasses, and closed shoes.",
+              image:
+                "https://images.unsplash.com/photo-1540979388789-6cee28a1cdc9?w=400&h=250&fit=crop&auto=format",
+              type: "Transportation",
+              location: "Hotel Pickup",
+              duration: "30 minutes",
+            },
+            {
+              time: "Morning",
+              title: "Bedouin Village Visit",
+              description:
+                "Experience traditional desert culture. Learn about traditional crafts and lifestyle.",
+              image:
+                "https://images.unsplash.com/photo-1540979388789-6cee28a1cdc9?w=400&h=250&fit=crop&auto=format",
+              type: "Cultural Experience",
+              location: "Bedouin Village",
+              duration: "2 hours",
+            },
+            {
+              time: "Morning",
+              title: "Camel Riding",
+              description:
+                "Traditional desert transportation. Hold tight and enjoy the swaying motion.",
+              image:
+                "https://images.unsplash.com/photo-1540979388789-6cee28a1cdc9?w=400&h=250&fit=crop&auto=format",
+              type: "Adventure Activity",
+              location: "Desert",
+              duration: "1 hour",
+            },
+            {
+              time: "Lunch",
+              title: "Traditional Bedouin Lunch",
+              description:
+                "Authentic desert cuisine. Try mansaf and fresh flatbread cooked in sand ovens.",
+              image:
+                "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=250&fit=crop&auto=format",
+              type: "Dining",
+              location: "Bedouin Camp",
+              duration: "1 hour",
+            },
+            {
+              time: "Afternoon",
+              title: "Quad Biking Adventure",
+              description:
+                "Explore desert dunes and landscapes. Follow the guide and wear provided safety gear.",
+              image:
+                "https://images.unsplash.com/photo-1540979388789-6cee28a1cdc9?w=400&h=250&fit=crop&auto=format",
+              type: "Adventure Activity",
+              location: "Desert",
+              duration: "1.5 hours",
+            },
+            {
+              time: "Evening",
+              title: "Sunset Views & Tea",
+              description:
+                "Watch sunset over the Red Sea mountains. Magical photo opportunities as the sun sets.",
+              image:
+                "https://images.unsplash.com/photo-1540979388789-6cee28a1cdc9?w=400&h=250&fit=crop&auto=format",
+              type: "Scenic Experience",
+              location: "Desert Viewpoint",
+              duration: "1 hour",
             },
           ],
         },
@@ -208,46 +500,236 @@ const EgyptTourismChatbot = ({ config }: Props) => {
     "desert-safari": {
       title: "3-Day Desert Safari Adventure",
       subtitle:
-        "Experience authentic Bedouin culture and stunning desert landscapes with expert guides.",
+        "Experience the magic of Egypt's deserts with camping under the stars, thrilling adventures, and authentic Bedouin culture.",
       totalDays: 3,
       days: [
         {
           day: 1,
           description:
-            "Journey into the Western Desert, visit a traditional Bedouin camp, and enjoy stargazing under the clear desert sky.",
+            "Journey into the Western Desert, meet Bedouin guides, and experience your first taste of desert life with camel trekking and traditional meals.",
           activities: [
             {
               time: "Morning",
-              title: "Western Desert Expedition",
+              title: "Desert Safari Departure",
               description:
-                "Adventure through golden sand dunes and discover the raw beauty of Egypt's vast desert landscape... Read more",
+                "Pick up from Cairo and drive to Bahariya Oasis. Scenic journey through desert landscapes.",
               image:
                 "https://images.unsplash.com/photo-1540979388789-6cee28a1cdc9?w=400&h=250&fit=crop&auto=format",
-              type: "Adventure",
-              location: "Western Desert",
-              duration: "≈ 6 h desert exploration",
+              type: "Transportation",
+              location: "Cairo to Bahariya Oasis",
+              duration: "4 hours",
+            },
+            {
+              time: "Morning",
+              title: "Bahariya Oasis Exploration",
+              description:
+                "Visit natural hot springs and palm groves. Learn about oasis life and agriculture.",
+              image:
+                "https://images.unsplash.com/photo-1540979388789-6cee28a1cdc9?w=400&h=250&fit=crop&auto=format",
+              type: "Nature Experience",
+              location: "Bahariya Oasis",
+              duration: "2 hours",
             },
             {
               time: "Lunch",
-              title: "Bedouin Traditional Meal",
+              title: "Traditional Bedouin Lunch",
               description:
-                "Authentic Bedouin cuisine prepared over open fire with traditional bread, roasted meat, and desert herbs... Read more",
+                "Authentic desert cuisine prepared by local Bedouins. Fresh bread, grilled meats, and herbal tea.",
               image:
                 "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=250&fit=crop&auto=format",
-              type: "Traditional cuisine",
+              type: "Dining",
               location: "Bedouin Camp",
-              duration: null,
+              duration: "1 hour",
+            },
+            {
+              time: "Afternoon",
+              title: "Camel Trekking Adventure",
+              description:
+                "Experience traditional desert transport. Gentle ride through sand dunes and rocky formations.",
+              image:
+                "https://images.unsplash.com/photo-1540979388789-6cee28a1cdc9?w=400&h=250&fit=crop&auto=format",
+              type: "Adventure Activity",
+              location: "Western Desert",
+              duration: "3 hours",
             },
             {
               time: "Evening",
-              title: "Desert Stargazing",
+              title: "Desert Camp Setup & Dinner",
               description:
-                "Experience the magic of the desert night sky with professional astronomy guides and traditional storytelling... Read more",
+                "Help set up traditional Bedouin tents. Enjoy dinner around campfire with live music.",
               image:
-                "https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=400&h=250&fit=crop&auto=format",
+                "https://images.unsplash.com/photo-1540979388789-6cee28a1cdc9?w=400&h=250&fit=crop&auto=format",
               type: "Cultural Experience",
               location: "Desert Camp",
-              duration: "≈ 3 h stargazing session",
+              duration: "3 hours",
+            },
+            {
+              time: "Evening",
+              title: "Stargazing Experience",
+              description:
+                "Marvel at the clearest night sky you'll ever see. Learn constellations from Bedouin guides.",
+              image:
+                "https://images.unsplash.com/photo-1540979388789-6cee28a1cdc9?w=400&h=250&fit=crop&auto=format",
+              type: "Stargazing",
+              location: "Desert Camp",
+              duration: "2 hours",
+            },
+          ],
+        },
+        {
+          day: 2,
+          description:
+            "Experience thrilling desert adventures with sandboarding, dune bashing, and discover the incredible White Desert formations.",
+          activities: [
+            {
+              time: "Morning",
+              title: "Sunrise & Desert Breakfast",
+              description:
+                "Wake up to stunning desert sunrise. Traditional Bedouin breakfast with fresh bread and honey.",
+              image:
+                "https://images.unsplash.com/photo-1540979388789-6cee28a1cdc9?w=400&h=250&fit=crop&auto=format",
+              type: "Dining",
+              location: "Desert Camp",
+              duration: "1 hour",
+            },
+            {
+              time: "Morning",
+              title: "4WD Dune Bashing",
+              description:
+                "Thrilling ride over sand dunes in specialized desert vehicles. Hold on tight for the adventure!",
+              image:
+                "https://images.unsplash.com/photo-1540979388789-6cee28a1cdc9?w=400&h=250&fit=crop&auto=format",
+              type: "Adventure Activity",
+              location: "Western Desert",
+              duration: "2 hours",
+            },
+            {
+              time: "Morning",
+              title: "Sandboarding Experience",
+              description:
+                "Surf the sand dunes! Learn to sandboard down massive dunes - like snowboarding but warmer.",
+              image:
+                "https://images.unsplash.com/photo-1540979388789-6cee28a1cdc9?w=400&h=250&fit=crop&auto=format",
+              type: "Adventure Activity",
+              location: "Sand Dunes",
+              duration: "2 hours",
+            },
+            {
+              time: "Lunch",
+              title: "Picnic Lunch in Oasis",
+              description:
+                "Refreshing break at a natural oasis. Swimming in freshwater spring surrounded by palm trees.",
+              image:
+                "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=250&fit=crop&auto=format",
+              type: "Dining",
+              location: "Natural Oasis",
+              duration: "2 hours",
+            },
+            {
+              time: "Afternoon",
+              title: "White Desert National Park",
+              description:
+                "Explore surreal chalk rock formations. Nature's sculptures in the middle of the desert.",
+              image:
+                "https://images.unsplash.com/photo-1540979388789-6cee28a1cdc9?w=400&h=250&fit=crop&auto=format",
+              type: "Nature Experience",
+              location: "White Desert",
+              duration: "3 hours",
+            },
+            {
+              time: "Evening",
+              title: "Traditional Bedouin Entertainment",
+              description:
+                "Evening of storytelling, traditional music, and dance around the campfire.",
+              image:
+                "https://images.unsplash.com/photo-1540979388789-6cee28a1cdc9?w=400&h=250&fit=crop&auto=format",
+              type: "Cultural Experience",
+              location: "Desert Camp",
+              duration: "3 hours",
+            },
+          ],
+        },
+        {
+          day: 3,
+          description:
+            "Final day of desert adventures with fossil hunting, more Bedouin cultural experiences, and a spectacular return journey through the desert.",
+          activities: [
+            {
+              time: "Morning",
+              title: "Fossil Hunting Adventure",
+              description:
+                "Search for ancient marine fossils in the desert. Discover seashells and coral from when this was ocean floor.",
+              image:
+                "https://images.unsplash.com/photo-1540979388789-6cee28a1cdc9?w=400&h=250&fit=crop&auto=format",
+              type: "Adventure Activity",
+              location: "Fossil Valley",
+              duration: "2 hours",
+            },
+            {
+              time: "Morning",
+              title: "Black Desert Exploration",
+              description:
+                "Visit the dramatic Black Desert with its volcanic landscape and dark rock formations.",
+              image:
+                "https://images.unsplash.com/photo-1540979388789-6cee28a1cdc9?w=400&h=250&fit=crop&auto=format",
+              type: "Nature Experience",
+              location: "Black Desert",
+              duration: "2 hours",
+            },
+            {
+              time: "Morning",
+              title: "Crystal Mountain Visit",
+              description:
+                "Marvel at the sparkling Crystal Mountain - a natural formation covered in quartz crystals.",
+              image:
+                "https://images.unsplash.com/photo-1540979388789-6cee28a1cdc9?w=400&h=250&fit=crop&auto=format",
+              type: "Nature Experience",
+              location: "Crystal Mountain",
+              duration: "1 hour",
+            },
+            {
+              time: "Lunch",
+              title: "Final Bedouin Feast",
+              description:
+                "Celebration lunch with traditional Bedouin dishes. Learn to make bread in sand ovens.",
+              image:
+                "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=250&fit=crop&auto=format",
+              type: "Cultural Experience",
+              location: "Bedouin Settlement",
+              duration: "2 hours",
+            },
+            {
+              time: "Afternoon",
+              title: "Desert Photography Workshop",
+              description:
+                "Capture perfect desert shots with expert guidance. Learn landscape photography techniques.",
+              image:
+                "https://images.unsplash.com/photo-1540979388789-6cee28a1cdc9?w=400&h=250&fit=crop&auto=format",
+              type: "Workshop",
+              location: "Various Desert Locations",
+              duration: "2 hours",
+            },
+            {
+              time: "Afternoon",
+              title: "Return Journey to Cairo",
+              description:
+                "Scenic drive back to Cairo with stops at viewpoints. Share memories and exchange contacts.",
+              image:
+                "https://images.unsplash.com/photo-1540979388789-6cee28a1cdc9?w=400&h=250&fit=crop&auto=format",
+              type: "Transportation",
+              location: "Desert to Cairo",
+              duration: "4 hours",
+            },
+            {
+              time: "Evening",
+              title: "Farewell Dinner in Cairo",
+              description:
+                "Celebratory dinner back in Cairo. Share photos and stories from your desert adventure.",
+              image:
+                "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=250&fit=crop&auto=format",
+              type: "Dining",
+              location: "Cairo Restaurant",
+              duration: "2 hours",
             },
           ],
         },
@@ -498,25 +980,54 @@ const EgyptTourismChatbot = ({ config }: Props) => {
                     </p>
                   </div>
 
-                  {/* Login Button - Only show if no messages */}
+                  {/* Authentication Button/Welcome - Only show if no messages */}
                   {messages.length === 0 && (
                     <div className="flex justify-center pt-2">
-                      <button className="text-[#DC143C] border border-[#DC143C] hover:bg-[#DC143C] hover:text-white px-6 py-2 text-sm font-normal rounded-full transition-colors flex items-center space-x-2">
-                        <svg
-                          className="w-4 h-4"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
+                      {!session ? (
+                        <button
+                          onClick={() => handleAuthAction("login")}
+                          className="text-[#DC143C] border border-[#DC143C] hover:bg-[#DC143C] hover:text-white px-6 py-2 text-sm font-normal rounded-full transition-colors flex items-center space-x-2"
                         >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-                          />
-                        </svg>
-                        <span>Log in to view your existing trip</span>
-                      </button>
+                          <svg
+                            className="w-4 h-4"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                            />
+                          </svg>
+                          <span>Log in to view your existing trip</span>
+                        </button>
+                      ) : (
+                        <div className="flex items-center space-x-2 text-[#DC143C]">
+                          <div className="w-6 h-6 rounded-full bg-gradient-to-br from-yellow-400 to-yellow-600 flex items-center justify-center">
+                            <svg
+                              className="w-3 h-3 text-white"
+                              fill="none"
+                              stroke="currentColor"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth={2}
+                                d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                              />
+                            </svg>
+                          </div>
+                          <span className="text-sm font-medium">
+                            Welcome back,{" "}
+                            {session.user?.name ||
+                              session.user?.email?.split("@")[0]}
+                            !
+                          </span>
+                        </div>
+                      )}
                     </div>
                   )}
 
@@ -684,22 +1195,51 @@ const EgyptTourismChatbot = ({ config }: Props) => {
                       <br />
                       Egyptian adventure
                     </h2>
-                    <button className="text-[#DC143C] border border-[#DC143C] hover:bg-[#DC143C] hover:text-white px-6 py-2 text-sm font-normal rounded-full transition-colors flex items-center space-x-2 mx-auto">
-                      <svg
-                        className="w-4 h-4"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
+                    {!session ? (
+                      <button
+                        onClick={() => handleAuthAction("login")}
+                        className="text-[#DC143C] border border-[#DC143C] hover:bg-[#DC143C] hover:text-white px-6 py-2 text-sm font-normal rounded-full transition-colors flex items-center space-x-2 mx-auto"
                       >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-                        />
-                      </svg>
-                      <span>Log in to view trip</span>
-                    </button>
+                        <svg
+                          className="w-4 h-4"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                          />
+                        </svg>
+                        <span>Log in to view trip</span>
+                      </button>
+                    ) : (
+                      <div className="flex items-center justify-center space-x-2 text-[#DC143C]">
+                        <div className="w-6 h-6 rounded-full bg-gradient-to-br from-yellow-400 to-yellow-600 flex items-center justify-center">
+                          <svg
+                            className="w-3 h-3 text-white"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                            />
+                          </svg>
+                        </div>
+                        <span className="text-sm font-medium">
+                          Welcome back,{" "}
+                          {session.user?.name ||
+                            session.user?.email?.split("@")[0]}
+                          !
+                        </span>
+                      </div>
+                    )}
                   </div>
 
                   {/* Trip Cards */}
