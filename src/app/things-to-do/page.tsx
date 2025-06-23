@@ -203,55 +203,7 @@ export default function ThingsToDo() {
           {/* ⬆️ EDIT HERE TO CHANGE DESCRIPTION TEXT */}
         </p>
 
-        {/* 🎯 CHOOSE YOUR ADVENTURE SECTION */}
-        <div className="bg-gray-100 dark:bg-gray-900 p-6 md:p-8 rounded-lg my-10">
-          {/* 
-            ⬆️ EDIT HERE TO CHANGE ADVENTURE SECTION STYLE:
-            - bg-gray-100 = background color
-            - p-6 md:p-8 = responsive padding
-            - rounded-lg = border radius
-            - my-10 = vertical margin
-          */}
-          
-          <h2 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">
-            {/* 
-              ⬆️ EDIT HERE TO CHANGE HEADING STYLE:
-              - text-2xl = font size
-              - font-bold = font weight
-              - mb-4 = bottom margin
-            */}
-            {t('thingsToDo.chooseAdventure.title')}
-            {/* ⬆️ EDIT HERE TO CHANGE HEADING TEXT */}
-          </h2>
-          
-          <div className="flex flex-col md:flex-row gap-4 items-start md:items-center">
-            {/* 
-              ⬆️ EDIT HERE TO CHANGE LAYOUT:
-              - flex-col = stack on mobile
-              - md:flex-row = side by side on desktop
-              - gap-4 = space between items
-            */}
-            
-            <p className="flex-1 text-gray-800 dark:text-gray-100">
-              {/* 
-                ⬆️ EDIT HERE TO CHANGE TEXT STYLE:
-                - flex-1 = take remaining space
-              */}
-              {t('thingsToDo.chooseAdventure.description')}
-              {/* ⬆️ EDIT HERE TO CHANGE DESCRIPTION TEXT */}
-            </p>
-            
-            <Button className="btn-primary whitespace-nowrap">
-              {/* 
-                ⬆️ EDIT HERE TO CHANGE BUTTON STYLE:
-                - btn-primary = primary button style
-                - whitespace-nowrap = prevent text wrapping
-              */}
-              {t('thingsToDo.chooseAdventure.cta')}
-              {/* ⬆️ EDIT HERE TO CHANGE BUTTON TEXT */}
-            </Button>
-          </div>
-        </div>
+
 
         {/* 🎨 FEATURED ACTIVITIES */}
         <div className="my-12">

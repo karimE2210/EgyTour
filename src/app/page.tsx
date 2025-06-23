@@ -83,7 +83,7 @@ export default function Home() {
                 description: "Mediterranean coast & ancient library",
                 top: "21%",
                 left: "43%",
-                link: "/things-to-do/mediterranean",
+                link: "/where-to-go/cities/alexandria",
               },
               // Cairo region (Nile Delta area)
               {
@@ -91,7 +91,7 @@ export default function Home() {
                 description: "Ancient pyramids & bustling markets",
                 top: "31.5%",
                 left: "50%",
-                link: "/where-to-go",
+                link: "/where-to-go/cities/cairo",
               },
               // Sinai region (Eastern peninsula)
               {
@@ -101,21 +101,13 @@ export default function Home() {
                 left: "67.5%",
                 link: "/things-to-do/sinai",
               },
-              // Western Desert/Siwa (Western oases)
-              {
-                name: "Western Oases",
-                description: "Siwa & hidden desert gems",
-                top: "49%",
-                left: "34%",
-                link: "/where-to-go/oases-and-villages",
-              },
               // Luxor region (Upper Egypt)
               {
                 name: "Luxor",
                 description: "Valley of Kings & ancient temples",
                 top: "58.5%",
                 left: "58%",
-                link: "/things-to-do/higher-egypt",
+                link: "/where-to-go/cities/luxor",
               },
               // Aswan region (Far south)
               {
@@ -123,7 +115,7 @@ export default function Home() {
                 description: "Nubian culture & Nile beauty",
                 top: "70.25%",
                 left: "58.25%",
-                link: "/things-to-do/higher-egypt",
+                link: "/where-to-go/cities/aswan",
               },
             ].map((region) => (
               <Link
@@ -167,7 +159,7 @@ export default function Home() {
           <p className="text-gray-600 dark:text-gray-300 mb-10">
             {t("home.exploreByMood.subtitle")}
           </p>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 gap-6">
             {[
               {
                 label: t("home.exploreByMood.moods.relax"),
@@ -175,29 +167,14 @@ export default function Home() {
                 link: "/things-to-do/wellness-and-relaxation",
               },
               {
-                label: t("home.exploreByMood.moods.thrill"),
-                icon: "🎢",
-                link: "/things-to-do/adventure-and-theme-parks",
-              },
-              {
-                label: t("home.exploreByMood.moods.explore"),
-                icon: "🧭",
-                link: "/things-to-do/desert-and-outdoor-activities",
-              },
-              {
                 label: t("home.exploreByMood.moods.historyBuff"),
                 icon: "🏛️",
                 link: "/things-to-do/historical-sites",
               },
               {
-                label: t("home.exploreByMood.moods.artsy"),
-                icon: "🎨",
-                link: "/art-culture",
-              },
-              {
                 label: t("home.exploreByMood.moods.offTheGrid"),
                 icon: "🌍",
-                link: "/where-to-go/oases-and-villages",
+                link: "/things-to-do/desert-and-outdoor-activities",
               },
             ].map(({ label, icon, link }) => (
               <Link
